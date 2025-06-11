@@ -5,12 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About - Funbi Akintade</title>
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Fonts: Using the same as Home -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet" />
   <style>
-    /* Define a CSS variable for the primary pink color */
     :root {
       --primary-pink: #f30f48;
     }
@@ -20,309 +18,142 @@
     }
 
     body {
-      background-color: black;
-      color: white;
+      background-color: #000;
+      color: #fff;
       font-family: 'Roboto', sans-serif;
-      padding-top: 80px; /* Space for fixed navbar */
-    }
-
-    /* Navbar styles */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background-color: black;
-      padding: 5px 20px; /* Reduced vertical padding */
-      z-index: 10;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    }
-
-    /* Increase the logo size (bolder image) but keep the navbar compact */
-    .navbar-left img {
-      height: 50px;
-    }
-
-    .navbar-right ul {
-      display: flex;
-      list-style: none;
-      gap: 20px;
-    }
-
-    .navbar-right a {
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 0.875rem;
-    }
-
-    .navbar-right a:hover {
-      color: var(--primary-pink);
-    }
-
-    /* Sidebar styles (Full page) */
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 250px;
-      height: 100vh; /* Full viewport height */
-      background-color: #080808;
-      padding-top: 100px; /* Push sidebar content down below the navbar */
-      padding-bottom: 20px;
-      border-right: 2px solid var(--primary-pink);
-      z-index: 5;
-      overflow-y: auto;
-    }
-
-    .sidebar img {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin: 0 auto 20px auto;
-      display: block;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    }
-
-    .sidebar a {
-      display: block;
-      padding: 10px;
-      color: white;
-      text-decoration: none;
-      border-bottom: 1px solid #444;
-      text-align: center;
-    }
-
-    .sidebar a:hover {
-      background-color: #444;
-      color: var(--primary-pink);
-    }
-
-    /* Content container (shifted down a bit to avoid the top edge) */
-    .content {
-      margin-left: 260px;
-      padding: 20px;
-      margin-top: 20px;
-    }
-
-    /* Section highlighted boxes */
-    .section {
-      margin-bottom: 30px;
-      padding: 20px;
-      border: 2px solid #444;
-      border-radius: 8px;
-      background-color: #050505;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-    }
-
-    /* Fancy pop-in animation */
-    @keyframes popIn {
-      0% {
-        opacity: 0;
-        transform: translateY(20px) scale(0.95);
-      }
-      80% {
-        opacity: 1;
-        transform: translateY(-2px) scale(1.02);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-
-    .fade-in {
-      opacity: 0;
-    }
-
-    .fade-in.visible {
-      animation: popIn 0.8s ease-out forwards;
-    }
-
-    /* Footer */
-    footer {
-      background-color: black;
-      color: white;
-      padding: 20px 5%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 150px;
-      font-size: 14px;
-    }
-
-    /* Mobile-friendly changes */
-    @media (max-width: 768px) {
-      .navbar-right ul {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-      }
-
-      .sidebar {
-        position: fixed;
-        top: 0;
-        left: -250px; /* Hide sidebar off-screen */
-        height: 100vh;
-        transition: 0.3s ease;
-        padding-top: 100px; /* Ensure content doesn't clash with header */
-      }
-
-      .sidebar.open {
-        left: 0;
-      }
-
-      .sidebar a {
-        padding: 10px;
-        border-bottom: 1px solid #444;
-      }
-
-      .content {
-        margin-left: 0;
-        padding: 15px;
-        margin-top: 100px; /* Add extra margin for mobile to avoid fixed header overlap */
-      }
-
-      /* Hamburger menu */
-      .hamburger {
-        display: block;
-        cursor: pointer;
-      }
-
-      .hamburger div {
-        width: 30px;
-        height: 4px;
-        background-color: white;
-        margin: 5px 0;
-      }
-
-      .navbar-left img {
-        height: 35px; /* Adjusted for mobile */
-      }
     }
   </style>
 </head>
 
-<body>
+<body class="pt-20">
   <!-- HEADER -->
-  <header class="flex justify-between items-center">
-    <div class="navbar-left">
-      <img src="img/Black And White Minimalist Typography Personal Logo (1).png" alt="Logo"  style="height: 4rem;">
-    </div>
-    <div class="navbar-right">
-      <nav>
-        <ul class="flex space-x-6">
-          <li><a href="index.html" class="hover:text-[#f30f48]">Home</a></li>
-          <li><a href="skill.html" class="hover:text-[#f30f48]">Skills</a></li>
-          <li><a href="contact.html" class="hover:text-[#f30f48]">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="hamburger lg:hidden" onclick="toggleSidebar()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
+  <header class="fixed top-0 left-0 right-0 bg-black px-6 py-4 z-50 shadow-lg flex justify-between items-center">
+    <img src="img/Black And White Minimalist Typography Personal Logo (1).png" alt="Logo" class="h-12">
+    <nav class="hidden lg:flex gap-8">
+      <a href="index.html" class="text-white font-medium hover:text-[#f30f48] transition">Home</a>
+      <a href="skill.html" class="text-white font-medium hover:text-[#f30f48] transition">Skills</a>
+      <a href="contact.html" class="text-white font-medium hover:text-[#f30f48] transition">Contact</a>
+    </nav>
+    <button class="lg:hidden flex flex-col space-y-1" onclick="toggleSidebar()">
+      <span class="w-6 h-0.5 bg-white"></span>
+      <span class="w-6 h-0.5 bg-white"></span>
+      <span class="w-6 h-0.5 bg-white"></span>
+    </button>
   </header>
 
-  <!-- MAIN CONTENT -->
+  <!-- MOBILE SIDEBAR -->
+  <!-- MOBILE SIDEBAR -->
+ <div id="mobileSidebar" class="fixed inset-0 bg-black bg-opacity-95 z-40 hidden flex-col px-8 pt-24 space-y-6 transition duration-300 lg:hidden">
+  <div class="flex justify-center">
+      <img src="img/oppggg.PNG" alt="Profile" class="w-24 h-24 rounded-full object-cover shadow-lg">
+    </div>
+    <ul class="space-y-4">
+        <a href="index.html" class="text-white text-lg font-semibold hover:text-[#f30f48]">Home</a>
+        <a href="skill.html" class="text-white text-lg font-semibold hover:text-[#f30f48]">Skills</a>
+        <a href="contact.html" class="text-white text-lg font-semibold hover:text-[#f30f48]">Contact</a>
+      <li>
+        <hr class="border-[#f30f48]">
+      </li>
+      <li>
+        <a href="#introduction" class="text-white hover:text-[#f30f48]">Introduction</a>
+      </li>
+      <li>
+        <a href="#background" class="text-white hover:text-[#f30f48]">Background</a>
+      </li>
+      <li>
+        <a href="#impact" class="text-white hover:text-[#f30f48]">Innovation</a>
+      </li>
+      <li>
+        <a href="#expertise" class="text-white hover:text-[#f30f48]">Expertise</a>
+      </li>
+    </ul>
+
+    <button id="closeBtn" class="absolute top-4 right-4 text-3xl text-white">
+      &times;
+    </button>
+  </div>
+
+
   <div class="flex">
-    <!-- Sidebar (Left Section) -->
-    <div id="sidebar" class="sidebar">
-      <!-- Image inside Sidebar -->
-      <img src="img/oppggg.PNG" alt="Your Image" />
-      <!-- Sidebar Menu Items -->
-      <a href="#introduction">Introduction</a>
-      <a href="#background">Background</a>
-      <a href="#impact">Innovation</a>
-      <a href="#expertise">Expertise</a>
-    </div>
+    <!-- DESKTOP SIDEBAR -->
+    <aside
+      class="hidden lg:flex flex-col fixed top-0 left-0 h-full w-64 bg-[#080808] border-r border-[#f30f48] pt-28 px-4 space-y-6 z-30">
+      <img src="img/oppggg.PNG" alt="Profile" class="w-24 h-24 rounded-full mx-auto object-cover shadow-lg">
+      <a href="#introduction" class="text-white text-center hover:text-[#f30f48]">Introduction</a>
+      <a href="#background" class="text-white text-center hover:text-[#f30f48]">Background</a>
+      <a href="#impact" class="text-white text-center hover:text-[#f30f48]">Innovation</a>
+      <a href="#expertise" class="text-white text-center hover:text-[#f30f48]">Expertise</a>
+    </aside>
 
-    <!-- Right Content Section -->
-    <div class="content">
-      <!-- Introduction Section -->
-      <section id="introduction" class="section fade-in visible">
-        <h2 class="text-3xl font-semibold mb-4" style="color: var(--primary-pink);">Introduction</h2>
-        <p class="text-base leading-relaxed mb-4">
-            Hello and welcome! I’m Funbi Akintade—a passionate designer developer dedicated to transforming ideas into immersive digital experiences.
-          </p>
-          <p class="text-base leading-relaxed mb-4">
-            With a strong foundation in research-driven design, accessibility, and innovation, I create intuitive designs that engage and inspire. My goal is to ensure every user interaction is intuitive, seamless, and meaningful.
-          </p>
-          <p class="text-base leading-relaxed mb-4">
-            My journey into web development was fueled by an unshakable desire to prove my capabilities. After being underestimated, I set out to showcase my true potential and the impact I can make through design.
-          </p>
-          <p class="text-base leading-relaxed mb-4">
-            Today, I channel that passion into building impactful, visually compelling digital solutions. Every project I take on is an opportunity to create something that not only meets the user's needs but also exceeds their expectations.
-          </p>
-          
+    <!-- MAIN CONTENT -->
+    <main class="flex-1 lg:ml-64 px-6 py-12 space-y-16">
+      <!-- Introduction -->
+      <section id="introduction" class="p-6 bg-[#050505] border border-gray-800 rounded-xl shadow-xl">
+        <h2 class="text-3xl font-bold text-[#f30f48] mb-4">Introduction</h2>
+        <p class="text-lg text-gray-300 leading-relaxed">Hello and welcome! I’m Funbi Akintade—a passionate designer
+          developer dedicated to transforming ideas into immersive digital experiences. My journey is rooted in
+          research-driven design, accessibility, and innovation. Every click, every scroll—crafted with intention to
+          make people feel seen.</p>
       </section>
 
-      <!-- Background Section -->
-      <section id="background" class="section fade-in visible">
-        <h2 class="text-3xl font-semibold mb-4" style="color: var(--primary-pink);">Background</h2>
-        <p class="text-base leading-relaxed mb-4">
-            I hold a BSc in Geography and Environmental Management from the University of Ilorin, where I studied the intricacies of the environment, human impact, and sustainable development. Throughout my academic journey, I gained a deeper understanding of how interconnected human societies are with the natural world and how we can design systems that respect and preserve it.
-          </p>
-          
-          <p class="text-base leading-relaxed mb-4">
-            My background in environmental management has led me to realize that UI/UX design can play a crucial role in promoting sustainable behaviors. By creating intuitive, engaging interfaces that educate users about sustainability, we can encourage people to make eco-friendly choices. As a UI/UX designer, I aim to blend design principles with sustainability to create impactful, user-centered solutions that make a positive environmental impact.
-          </p>
-          
-          <p class="text-base leading-relaxed mb-4">
-            In my role as a digital-asset engineer, I am constantly looking for ways to merge my passion for design with my commitment to sustainability. Whether it’s creating green-tech applications, platforms for sustainable development, or websites that educate users on eco-friendly practices, I believe my background in Geography and Environmental Management has uniquely positioned me to drive change through design.
-          </p>
-          
-        
-        </section>
+      <!-- Background -->
+      <section id="background" class="p-6 bg-[#050505] border border-gray-800 rounded-xl shadow-xl">
+        <h2 class="text-3xl font-bold text-[#f30f48] mb-4">Background</h2>
+        <p class="text-lg text-gray-300 leading-relaxed">I hold a BSc in Geography and Environmental Management from the
+          University of Ilorin. That academic journey birthed a fire for sustainable, user-conscious design. Today, I
+          merge that eco-lens with UI/UX mastery to build tech that’s not only functional but also mindful.</p>
       </section>
 
-      <!-- Innovation Section -->
-      <section id="innovation" class="section fade-in visible">
-        <h2 class="text-3xl font-semibold mb-4" style="color: var(--primary-pink);">Innovation & Impact</h2>
-        <p class="text-base leading-relaxed mb-4">
-          As a Web-devloper & Digital-asset engineer, I strive to push the boundaries of design to deliver innovative digital experiences. I believe that the future of technology is not just about functionality but about creating meaningful, engaging, and inclusive experiences. My innovative approach integrates new technologies like AI and machine learning to enhance user interaction and streamline design processes.
-        </p>
+      <!-- Innovation -->
+      <section id="impact" class="p-6 bg-[#050505] border border-gray-800 rounded-xl shadow-xl">
+        <h2 class="text-3xl font-bold text-[#f30f48] mb-4">Innovation</h2>
+        <p class="text-lg text-gray-300 leading-relaxed mb-4">At HealHubCenter, innovation isn’t just a buzzword—it’s
+          the heartbeat. We’re blending traditional wellness with modern tech to craft a global hub where healing meets
+          high-impact design.</p>
+        <ul class="list-disc pl-6 text-gray-300 space-y-2">
+          <li>AI-powered mental health tools for real-time emotional support</li>
+          <li>Pop-up experiences in airports and malls with curated wellness merch</li>
+          <li>Mobile-first platforms tailored for underserved communities</li>
+          <li>Branded school supplies that spark mental health conversations</li>
+        </ul>
       </section>
 
+      <!-- Expertise -->
+      <section id="expertise" class="p-6 bg-[#050505] border border-gray-800 rounded-xl shadow-xl">
+        <h2 class="text-3xl font-bold text-[#f30f48] mb-4">Expertise</h2>
+        <p class="text-lg text-gray-300 leading-relaxed mb-4">We don’t just dream—we execute. HealHubCenter thrives on
+          the wisdom of veterans and the hunger of visionaries.</p>
+        <ul class="list-disc pl-6 text-gray-300 space-y-2">
+          <li>35+ years of psychiatric expertise embedded in leadership</li>
+          <li>Founder equipped with cross-sector knowledge in law, leadership, and tech-for-good</li>
+          <li>Scalable outreach models rolled out in underserved regions</li>
+          <li>Design systems rooted in cultural empathy and growth architecture</li>
+        </ul>
+      </section>
+    </main>
+  </div>
 
-  <footer class="mt-16 bg-black text-center py-2 border-t border-gray-700">
-    <div class="footer-text mb-2">
-      <p>&copy; 2025 Funbi Akintade. All rights reserved.</p>
-      <p>Phone: +234-702-5511-392 | Email: <a href="mailto:Ayipexfunby@gmail.com"
-          class="text-[#f30f48] hover:text-[#f30f48]">Ayipexfunby@gmail.com</a></p>
-    </div>
-    <div class="social-icons flex justify-center space-x-6">
-      <a href="https://www.linkedin.com/in/funbi-akintade-59a4ba237" target="_blank" class="hover:text-[#f30f48]">
-        <img src="https://img.icons8.com/ios-filled/40/ffffff/linkedin.png" alt="LinkedIn" />
-      </a>
-      <a href="https://www.instagram.com/oluwafunbilayorr" target="_blank" class="hover:text-[#f30f48]">
-        <img src="https://img.icons8.com/ios-filled/40/ffffff/instagram-new.png" alt="Instagram" />
-      </a>
-      <a href="mailto:Ayipexfunby@gmail.com" class="hover:text-[#f30f48]">
-        <img src="https://img.icons8.com/ios-filled/40/ffffff/email.png" alt="Email" />
-      </a>
-    </div>
+  <!-- FOOTER -->
+  <footer class="bg-black text-white text-center py-8 text-sm border-t border-gray-800">
+    &copy; 2025 Funbi Akintade. All rights reserved.
   </footer>
-  <!-- JS: Sidebar toggle -->
+
   <script>
     function toggleSidebar() {
-      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('mobileSidebar').classList.toggle('hidden');
     }
-  </script>
-  <script>
-    function toggleSidebar() {
-      let sidebar = document.getElementById("sidebar");
-      if (sidebar.classList.contains("open")) {
-        sidebar.classList.remove("open");
-      } else {
-        sidebar.classList.add("open");
+
+    // Close sidebar with the close button
+    document.addEventListener('DOMContentLoaded', function () {
+      const closeBtn = document.getElementById('closeBtn');
+      const mobileSidebar = document.getElementById('mobileSidebar');
+      if (closeBtn && mobileSidebar) {
+        closeBtn.addEventListener('click', function () {
+          mobileSidebar.classList.add('hidden');
+        });
       }
-    }
+    });
   </script>
-  
 </body>
 
 </html>
