@@ -1,626 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Funbi Akintade | UI/UX Designer & Front-End Developer</title>
-    <meta name="google-site-verification" content="L7kqDqsssoVlvR71EYZi9yOkq6fzVIiSiodDlhVPg2o" />
-    <meta name="description"
-        content="Welcome to Funbi Akintade’s portfolio. Explore her creative journey through UI/UX design, front-end development, and digital strategy.">
-    <!-- 🔥 Open Graph Meta Tags -->
-    <meta property="og:title" content="Funbi Akintade | UI/UX Designer & Front-End Developer" />
-    <meta property="og:description"
-        content="Welcome to my digital playground—showcasing my design thinking, front-end skills, and creative process." />
-    <meta property="og:image"
-        content="https://boisterous-meerkat-45f2ab.netlify.app/img/Black%20And%20White%20Minimalist%20Typography%20Personal%20Logo%20(1).png" />
-    <meta property="og:url" content="https://boisterous-meerkat-45f2ab.netlify.app/" />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
+  <title>Funbi Akintade | Founder • Product Designer • Front-End Engineer</title>
+  <meta name="google-site-verification" content="L7kqDqsssoVlvR71EYZi9yOkq6fzVIiSiodDlhVPg2o" />
+  <meta name="description"
+    content="Funbi Akintade is the founder of HealHubCenter—building neuroscience-informed mental health AI. Product design, UI/UX, front-end engineering, and behavioral intelligence systems." />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @keyframes magic3d {
-            0% {
-                opacity: 0;
-                transform: perspective(600px) rotateX(0deg) translateY(20px);
-            }
+  <meta property="og:title" content="Funbi Akintade | Founder • Product Designer • Front-End Engineer" />
+  <meta property="og:description"
+    content="Founder of HealHubCenter, building neuroscience-informed mental health AI. Product design, UI/UX, and front-end engineering—crafted with enterprise taste." />
+  <meta property="og:image"
+    content="https://boisterous-meerkat-45f2ab.netlify.app/img/Black%20And%20White%20Minimalist%20Typography%20Personal%20Logo%20(1).png" />
+  <meta property="og:url" content="https://boisterous-meerkat-45f2ab.netlify.app/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-            100% {
-                opacity: 1;
-                transform: perspective(600px) rotateX(0deg) translateY(0);
-            }
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 
-        }
+  <!-- ✅ Garamond -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap" />
 
-        /* Apply the new animation when the element becomes visible */
-        .fade-in.visible {
-            animation: magic3d 0.8s ease-out forwards;
-        }
+  <script src="https://cdn.tailwindcss.com"></script>
 
-        html {
-            scroll-behavior: smooth;
-        }
+  <style>
+    html { scroll-behavior: smooth; }
 
-        body {
-            background-color: black;
-            color: white;
-            margin: 0;
-            padding: 0;
-            position: relative;
-            font-family: 'Roboto', sans-serif;
-        }
+    :root {
+      --bg: #000000;
+      --border: rgba(255, 255, 255, 0.12);
+      --border2: rgba(255, 255, 255, 0.18);
+      --text-dim: rgba(255, 255, 255, 0.7);
+      --text-faint: rgba(255, 255, 255, 0.5);
 
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
+      --blue: rgba(0, 119, 255, 0.92);
+      --blueA: rgba(0, 119, 255, 0.18);
+      --blueB: rgba(0, 119, 255, 0.12);
+      --blueC: rgba(0, 60, 150, 0.25);
+    }
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    body {
+      background:
+        radial-gradient(circle at 15% 20%, var(--blueA), transparent 35%),
+        radial-gradient(circle at 85% 80%, var(--blueB), transparent 40%),
+        radial-gradient(circle at 50% 50%, var(--blueC), #000 70%);
+      background-color: var(--bg);
+      color: white;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      font-family: 'EB Garamond', serif;
+      overflow-x: hidden;
+    }
 
-        .fixed-image-right {
-            position: fixed;
-            top: 10%;
-            right: 5%;
-            height: 70vh;
-            width: auto;
-            z-index: -1;
-        }
+    /* moving glow */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: -30%;
+      background: radial-gradient(circle, rgba(0, 119, 255, 0.15) 0%, transparent 60%);
+      animation: floatGlow 18s ease-in-out infinite alternate;
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(120px);
+    }
 
-        section {
-            margin-top: 120px;
-            padding: 50px 10%;
-            text-align: left;
-        }
+    @keyframes floatGlow {
+      0% { transform: translate(-10%, -10%) scale(1); }
+      50% { transform: translate(10%, 5%) scale(1.1); }
+      100% { transform: translate(0%, 15%) scale(1); }
+    }
 
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: black;
-            padding: 16px 40px;
-            z-index: 20;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        }
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(10px);
+      padding: 16px 40px;
+      z-index: 20;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
 
-        header img {
-            height: 8rem;
-            z-index: 21;
-        }
+    header img { height: 5rem; z-index: 21; }
 
-        .navbar-left {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            z-index: 21;
-        }
+    .navbar-right a {
+      text-decoration: none;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.85);
+      letter-spacing: 0.02em;
+    }
 
-        .navbar-left a {
-            text-decoration: none;
-            font-weight: bold;
-            color: white;
-        }
+    .navbar-right a:hover { color: var(--blue); }
 
-        .navbar-left a:hover {
-            color: #f30f48;
-        }
+    section {
+      margin-top: 110px;
+      padding: 52px 10%;
+      position: relative;
+      z-index: 1;
+    }
 
-        .navbar-right {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            z-index: 21;
-        }
+    /* Animation system (re-triggers) */
+    .fx {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
 
-        .navbar-right a {
-            text-decoration: none;
-            font-weight: bold;
-            color: white;
-        }
+    .fx.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-        .navbar-right a:hover {
-            color: #f30f48;
-        }
+    .fx-left { transform: translateX(-22px); }
+    .fx-right { transform: translateX(22px); }
+    .fx-left.in, .fx-right.in { transform: translateX(0); }
 
-        .intro-text {
-            text-align: left;
-            max-width: 700px;
-            font-size: 2.5rem;
-            font-weight: bold;
-        }
+    /* HERO */
+    .hero {
+      min-height: 72vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 40px;
+    }
 
-        .intro-text .nigeria {
-            color: #f30f48;
-        }
+    /* ✅ reduced size */
+    .intro-text {
+      max-width: 920px;
+      font-size: clamp(1.7rem, 3.2vw, 2.7rem); /* smaller + controlled */
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: 0.01em;
+    }
 
-        #about {
-            background-color: black;
-            color: white;
-            padding: 80px 10%;
-            margin-top: 0;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: flex-start;
-            flex-direction: row;
-        }
+    .accent { color: var(--blue); }
 
-        #about img {
-            position: relative;
-            left: 0;
-            top: 0;
-            width: 250px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
-            margin-right: 40px;
-            transition: transform 0.3s ease-in-out;
-        }
+    .hero-sub {
+      max-width: 920px;
+      margin-top: 16px;
+      font-size: 1.18rem;
+      line-height: 1.75;
+      color: var(--text-dim);
+    }
 
-        #about img:hover {
-            transform: scale(1.05);
-        }
+    .hero-tags {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-        #about .text-container {
-            max-width: 600px;
-        }
+    .tag {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(0, 0, 0, 0.35);
+      color: rgba(255, 255, 255, 0.75);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
 
-        footer {
-            background-color: black;
-            color: white;
-            padding: 16px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            margin-top: 60px;
-            height: 80px;
-            /* Same height as navbar */
-        }
+    .tag:hover {
+      transform: translateY(-2px);
+      border-color: var(--border2);
+    }
 
-        footer .footer-logo {
-            height: 50px;
-        }
+    /* Clickable HealHubCenter styling */
+    .brand-link {
+      color: rgba(255, 255, 255, 0.92);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0, 119, 255, 0.25);
+      transition: color 0.2s ease, border-color 0.2s ease;
+      font-weight: 600;
+    }
+    .brand-link:hover {
+      color: var(--blue);
+      border-color: rgba(0, 119, 255, 0.6);
+    }
 
-        footer .social-icons a {
-            color: white;
-            font-size: 1.5rem;
-            margin-right: 1rem;
-            transition: color 0.3s ease;
-            transform: scale(1);
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
+    /* Glass panel */
+    .panel {
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 42px 10%;
+      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.6);
+      position: relative;
+      overflow: hidden;
+    }
 
-        footer {
-            flex-direction: column;
-            align-items: center;
-            min-height: 150px;
-        }
+    .panel::after {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: linear-gradient(110deg, transparent 40%, rgba(255,255,255,0.06) 50%, transparent 60%);
+      transform: translateX(-60%) rotate(2deg);
+      opacity: 0;
+      pointer-events: none;
+      animation: shimmerSweep 8s ease-in-out infinite;
+    }
 
-        footer .social-icons a:hover {
-            color: #38bdf8;
-            transform: scale(1.2);
-        }
+    @keyframes shimmerSweep {
+      0% { transform: translateX(-60%) rotate(2deg); opacity: 0; }
+      12% { opacity: 0.18; }
+      20% { opacity: 0.06; }
+      45% { transform: translateX(60%) rotate(2deg); opacity: 0; }
+      100% { transform: translateX(60%) rotate(2deg); opacity: 0; }
+    }
 
-        footer .footer-text {
-            font-size: 1rem;
-            max-width: 600px;
-            color: #d1d5db;
-        }
+    .section-title {
+      font-size: 2.1rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
 
-        footer .footer-text a {
-            color: #38bdf8;
-        }
+    .section-sub {
+      font-size: 1.15rem;
+      color: var(--text-dim);
+      line-height: 1.75;
+      max-width: 980px;
+    }
 
-        footer .footer-text a:hover {
-            color: #f30f48;
-        }
+    /* Card grid */
+    .grid {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
 
-        #skills {
-            background-color: #f30f48;
-            /* Pink background */
-            color: white;
-            padding: 50px 5%;
-            border-radius: 8px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-            margin-top: 20px;
-            width: 90%;
-            max-width: 1200px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+    .card {
+      grid-column: span 6;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 18px 16px;
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+      position: relative;
+      overflow: hidden;
+    }
 
-        #projects {
-            background-color: #000000;
-            /* Pink background */
-            color: white;
-            padding: 50px 5%;
-            border-radius: 8px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-            margin-top: 20px;
-            width: 90%;
-            max-width: 1200px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border2);
+      box-shadow: 0 18px 55px rgba(0, 0, 0, 0.7);
+    }
 
-        #contact {
-            background-color: #f30f48;
-            /* Pink background */
-            color: white;
-            padding: 50px 5%;
-            border-radius: 8px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-            margin-top: 20px;
-            width: 90%;
-            max-width: 1200px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+    .card .kicker {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.55);
+      margin-bottom: 8px;
+    }
 
-        .grid div {
-            background-color: black;
-            padding: 24px;
-            border-radius: 12px;
-            border-left: 3px solid #f30f48;
-            transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
-        }
+    .card h3 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
 
-        .grid div:hover {
-            box-shadow: 0 0 20px #f30f48;
-            transform: translateY(-5px);
-        }
+    .card p {
+      color: var(--text-dim);
+      line-height: 1.65;
+      font-size: 1.05rem;
+    }
 
-        .grid div h3 {
-            text-decoration: underline;
-            text-decoration-color: #998e92;
-            text-underline-offset: 4px;
-            text-decoration-thickness: 2px;
-        }
+    .card ul {
+      margin-top: 10px;
+      padding-left: 18px;
+      color: var(--text-dim);
+      line-height: 1.7;
+    }
 
+    .card li { margin-bottom: 6px; }
 
-        #contact:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
-        }
+    /* Book callout */
+    .book {
+      margin-top: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(0,0,0,0.35);
+      color: rgba(255,255,255,0.8);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+    }
 
-        .social-icons {
-            display: flex;
-            justify-content: flex-start;
-            margin-top: 20px;
-        }
+    .book strong { color: rgba(255,255,255,0.92); font-weight: 700; }
+    .book .dot {
+      width: 6px; height: 6px; border-radius: 999px; background: var(--blue);
+      box-shadow: 0 0 18px rgba(0,119,255,0.6);
+    }
 
-        .social-icons a {
-            color: white;
-            font-size: 2rem;
-            margin-right: 15px;
-            transition: color 0.3s ease;
-        }
+    /* Footer */
+    footer {
+      margin-top: 60px;
+      padding: 28px 40px;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      position: relative;
+      z-index: 2;
+    }
 
-        .social-icons a:hover {
-            color: #38bdf8;
-        }
+    footer .footer-text {
+      font-size: 1rem;
+      max-width: 900px;
+      color: #d1d5db;
+      text-align: center;
+      line-height: 1.6;
+    }
 
-        .left-aligned-section {
-            text-align: left;
-            max-width: 700px;
-        }
+    footer .footer-text a { color: var(--blue); }
+    footer .footer-text a:hover { color: rgba(255,255,255,0.9); }
 
-        .illuminate {
+    .social-icons { display: flex; justify-content: center; gap: 18px; }
 
-            box-shadow: 0 0 20px rgba(243, 15, 72, 0.6);
-            transition: box-shadow 0.3s ease, transform 0.3s ease;
-        }
+    .social-icons a img {
+      width: 34px;
+      height: 34px;
+      opacity: 0.92;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
 
-        .illuminate:hover {
-            /* Enhanced glow on hover */
-            box-shadow: 0 0 30px rgba(243, 15, 72, 0.8);
-            transform: translateY(-10px) scale(1.02);
-        }
+    .social-icons a:hover img {
+      transform: translateY(-2px) scale(1.05);
+      opacity: 1;
+    }
 
-        /* Add some spacing around the text */
-        #skills ul,
-        #projects ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        #skills li,
-        #projects li {
-            margin-bottom: 10px;
-        }
-
-        .fixed-image-right {
-            position: fixed;
-            top: 15%;
-            right: 2%;
-            height: 77vh;
-            width: auto;
-            z-index: -1;
-        }
-
-        /* For devices with width 768px or less */
-        @media (max-width: 768px) {
-            .fixed-image-right {
-                height: 50vh;
-                /* Reduced height for mobile */
-                top: 20%;
-                /* Adjust top position if needed */
-                right: 5%;
-                /* Adjust right position if needed */
-            }
-        }
-    </style>
+    @media (max-width: 900px) {
+      .card { grid-column: span 12; }
+      section { padding: 46px 7%; }
+      header { padding: 14px 18px; }
+      header img { height: 4.3rem; }
+      .panel { padding: 34px 7%; }
+      .hero { min-height: 74vh; }
+    }
+  </style>
 </head>
 
 <body class="bg-black text-white">
-    <header class="flex justify-between items-center transition-all">
-        <div class="navbar-left">
-            <img src="img/Black And White Minimalist Typography Personal Logo (1).png" alt="Logo" class="navbar-img"
-                style="height: 5rem;">
-        </div>
-        <div class="navbar-right">
-            <nav>
-                <ul class="flex space-x-6">
-                    <li><a href="about.html" class="text-white hover:text-blue-500 font-bold">About</a></li>
-                    <li><a href="skill.html" class="text-white hover:text-blue-500 font-bold">Skills</a></li>
-                    <li><a href="contact.html" class="text-white hover:text-blue-500 font-bold">Contact</a></li>
-                </ul>
-            </nav>
+  <header class="flex justify-between items-center transition-all">
+    <div class="navbar-left">
+      <img src="img/Black And White Minimalist Typography Personal Logo (1).png" alt="Logo" class="navbar-img" />
+    </div>
+    <div class="navbar-right">
+      <nav>
+        <ul class="flex space-x-6">
+          <li><a href="about.html">About</a></li>
+           <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-        </div>
-    </header>
+  <!-- HERO -->
+  <section class="hero fx" data-fx="hero">
+    <h1 class="intro-text">
+      Hi, I’m <span class="accent">Funbi</span> Akintade —<br />
+      Founder building neuroscience-informed<br />
+      mental health AI, with elite product taste.
+    </h1>
 
+    <p class="hero-sub">
+      I lead
+      <a class="brand-link healhub-link" href="https://www.healhubcenter.com" rel="noopener">HealHubCenter</a>:
+      a behavioral science and cognitive intelligence platform combining therapy, personalized AI support, and real-time pattern insight.
+      I also design and engineer the interfaces behind high trust products—UI/UX, front-end, and product strategy.
+    </p>
 
-    <div class="absolute inset-0 bg-cover bg-center opacity-30 filter blur-sm"
-        style="background-image: url('img/Empower\ Your\ Hustle_\ Boss\ Babe\ Aesthetic\ Inspiration✨💻.jpg');"></div>
-    <div class="relative z-10 slide-up">
-        <h1 class="text-5xl font-bold text-[#f30f48] mb-4 animate-pulse">Skills &amp; Expertise</h1>
-        <p class="text-lg max-w-3xl mx-auto">
+    <!-- Published Book -->
+    <div class="book">
+      <span class="dot"></span>
+      Writer • Published Author — <strong>Before 21</strong>
+    </div>
 
+    <div class="hero-tags">
+      <span class="tag">Founder • HealHubCenter</span>
+      <span class="tag">Behavioral Science</span>
+      <span class="tag">Neuroscience-informed AI</span>
+      <span class="tag">UI/UX • Product Design</span>
+      <span class="tag">Front-End Engineering</span>
+      <span class="tag">Systems & Workflows</span>
+    </div>
+  </section>
+<p class="subhead mt-5">
+  Founder and CEO of
+  <a class="brand-link healhub-link" href="https://www.healhubcenter.com"  rel="noopener">HealHubCenter</a>,
+  I design and engineer neuroscience-informed mental health AI that adapts in real time, with the polish of enterprise product.
+</p>
 
+<div class="mt-8 card">
+  <div class="kicker mb-2">Computational Neuroscience, Applied</div>
+  <h3>How HealHubCenter adapts in real time</h3>
+  <p>
+    HealHubCenter is built on applied computational neuroscience and behavioral science research. Instead of treating support
+    like a one-off chat, the system learns patterns over time and responds with context. It observes interaction signals like
+    language tone, pacing, frequency, and routine shifts to infer a user’s moment-to-moment state and deliver more appropriate support.
+  </p>
+  <p class="mt-3">
+    Under the hood, it uses signal-inspired modeling approaches drawn from years of research across affective neuroscience,
+    cognitive behavioral frameworks, and learning systems. The result is personalized assistance that feels intentional, not generic,
+    while respecting privacy and safety boundaries.
+  </p>
+  <p class="mt-3" style="color: rgba(255,255,255,0.62); font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; font-size: 0.9rem;">
+    Note: HealHubCenter is a support platform and does not provide medical diagnosis. When risk is detected, the system routes users to appropriate resources and professional care pathways.
+  </p>
+</div>
 
-        <section class="h-[60vh] flex items-center justify-start pl-10">
-            <h1 class="intro-text text-4xl md:text-5xl lg:text-6xl">
-                Hi, I am <span class="nigeria">Funbi</span> <span class="text-white">Akintade</span><br>
-                <span class="nigeria">A Digital-asset Engineer</span><br>
-                & <span class="text-white">Front-End</span> <span class="nigeria">Developer</span>
-            </h1>
-        </section>
+  <!-- ABOUT -->
+  <section id="about" class="panel fx fx-left">
+    <div class="text-container">
+      <h2 class="section-title">What I’m Building</h2>
+      <p class="section-sub">
+        <a class="brand-link healhub-link" href="https://www.healhubcenter.com" rel="noopener">HealHubCenter</a>
+        is mental health infrastructure engineered for scale—built on cognitive behavioral frameworks, behavioral analytics,
+        and research-driven personalization.
+        <br /><br />
+        We support individuals through therapy access and intelligent assistance, and we also deliver enterprise solutions:
+        custom AI bots, appointment booking, workflow systems, and integration support for healthcare organizations.
+      </p>
+    </div>
+  </section>
 
-        <section id="about"
-            class="fade-in relative w-full max-w-4xl mx-auto my-10 p-6 border-2 rounded-lg bg-gray-900/70 transition-transform transform hover:-translate-y-1 hover:shadow-xl"
-            style="border-color: #f30f48;">
+  <!-- SELECTED WORK (as premium animated cards) -->
+  <section id="projects" class="panel fx fx-right">
+    <h2 class="section-title">Selected Work</h2>
+    <p class="section-sub">
+      Curated highlights. Next we’ll plug in your full list (US-based work, enterprise builds, client sites, and your major milestones)
+      and format it as a case-study grid.
+    </p>
 
-            <div class="text-container text-center md:text-left">
-                <h2 class="text-3xl font-bold" style="color: #f30f48;">Welcome to My Digital World! 🚀</h2>
+    <div class="grid">
+      <div class="card fx" data-delay="0">
+        <div class="kicker">Product • Platform</div>
+        <h3>
+          <a class="brand-link healhub-link" href="https://www.healhubcenter.com"  rel="noopener">HealHubCenter</a> Ecosystem
+        </h3>
+        <p>
+          Product design + front-end build of a mental health AI platform focused on personalization, trust, and scalability.
+        </p>
+        <ul>
+          <li>Therapy + AI support experience design</li>
+          <li>Behavior-aware flows and retention loops</li>
+          <li>Premium UI systems that feel enterprise</li>
+        </ul>
+      </div>
 
-                <p class="text-lg mb-4">
-                    As a passionate UI/UX designer and front-end developer, I’m all about creating digital experiences
-                    that
-                    not only look amazing but also work seamlessly. I believe in designs that speak to the user and code
-                    that brings those designs to life. 💻🎨
-                </p>
-                <p class="text-lg mb-4">
-                    Let's turn great ideas into smooth, user-friendly experiences. Want to know more about how I work?
-                    Feel
-                    free to dive deeper into my story and expertise!
-                </p>
-                <div class="mt-6">
-                    <a href="about.html"
-                        class="px-6 py-2 text-white font-semibold rounded-lg bg-[#f30f48] hover:bg-[#e02036] transition-colors">Read
-                        More</a>
+      <div class="card fx" data-delay="60">
+        <div class="kicker">Enterprise • Automation</div>
+        <h3>Custom AI Bots & Workflows</h3>
+        <p>
+          Built full websites and implemented systems for AI agents/bot services covering workflows, onboarding, and conversion.
+        </p>
+        <ul>
+          <li>Booking + workflow automation concepts</li>
+          <li>Landing-to-product journey design</li>
+          <li>Integration-ready UI patterns</li>
+        </ul>
+      </div>
 
-                </div>
-            </div>
-        </section>
+      <div class="card fx" data-delay="120">
+        <div class="kicker">Design • Systems</div>
+        <h3>Design Systems & UI Libraries</h3>
+        <p>
+          Created scalable design foundations across products: typography, components, spacing, and interaction rules.
+        </p>
+        <ul>
+          <li>Reusable component patterns</li>
+          <li>Accessibility + high-trust design</li>
+          <li>Consistency across pages & features</li>
+        </ul>
+      </div>
 
+      <div class="card fx" data-delay="180">
+        <div class="kicker">Visual • Creative</div>
+        <h3>Senior-Level Visual & Brand Support</h3>
+        <p>
+          Strong graphic design execution for product visuals, marketing assets, and identity alignment—without looking “template-ish.”
+        </p>
+        <ul>
+          <li>Marketing & product graphics</li>
+          <li>Brand polish & direction</li>
+          <li>Visual hierarchy that converts</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
+  <!-- CAPABILITIES (cards) -->
+  <section id="skills" class="panel fx fx-left">
+    <h2 class="section-title">Capability Stack</h2>
+    <p class="section-sub">
+      No beginner percentage bars. This is the real stack: product + engineering + systems + research awareness.
+    </p>
 
-        <section id="projects" class="left-aligned-section fade-in"
-            style="border: 2px solid #f30f48; padding: 50px 5%; border-radius: 8px;">
-            <h2 class="text-2xl font-semibold mb-4">Projects</h2>
-            <ul class="space-y-3">
-                <li><strong>Redesign of HealHubCenter.org</strong> - Improved UI/UX for better accessibility and
-                    engagement.
-                </li>
-                <li><strong>Interactive Mental Health Assessment Tool</strong> - Designed and developed a user-friendly
-                    self-assessment tool.</li>
-                <li><strong>E-Commerce Website Prototype</strong> - Created a high-fidelity prototype for an online
-                    store.
-                </li>
-                <li><strong>Portfolio Website</strong> - Built and designed a personal portfolio showcasing UI/UX
-                    projects.
-                </li>
-            </ul>
-        </section>
-        <section id="skills" class="fade-in"
-            style="background-color: black; border: 2px solid #f30f48; padding: 50px 5%; border-radius: 8px;">
-            <div class="flex flex-col md:flex-row gap-10">
-                <!-- Left Column: Technical Skills -->
-                <div class="w-full md:w-1/2">
-                    <h2 class="text-3xl font-bold mb-4 border-b-2 border-[#f30f48] inline-block"
-                        style="color: #f30f48;">
-                        Technical Skills</h2>
-                    <div class="space-y-6">
-                        <!-- HTML Skill -->
-                        <div class="flex items-center space-x-4">
-                            <div class="w-10 h-10 flex items-center justify-center bg-gray-700 rounded-full">
-                                <img src="img/html.png" alt="HTML" class="w-6 h-6">
-                            </div>
-                            <div class="w-full">
-                                <p class="font-bold" style="color: #f30f48;">HTML - 91%</p>
-                                <div class="w-full bg-gray-600 rounded-full h-2">
-                                    <div class="bg-[#f30f48] h-2 rounded-full" style="width: 91%;"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- CSS Skill -->
-                        <div class="flex items-center space-x-4">
-                            <div class="w-10 h-10 flex items-center justify-center bg-gray-700 rounded-full">
-                                <img src="img/css.png" alt="CSS" class="w-6 h-6">
-                            </div>
-                            <div class="w-full">
-                                <p class="font-bold" style="color: #f30f48;">CSS - 88%</p>
-                                <div class="w-full bg-gray-600 rounded-full h-2">
-                                    <div class="bg-[#f30f48] h-2 rounded-full" style="width: 88%;"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- JavaScript Skill -->
-                        <div class="flex items-center space-x-4">
-                            <div class="w-10 h-10 flex items-center justify-center bg-gray-700 rounded-full">
-                                <img src="img/javascript.png" alt="JavaScript" class="w-6 h-6">
-                            </div>
-                            <div class="w-full">
-                                <p class="font-bold" style="color: #f30f48;">JavaScript - 76%</p>
-                                <div class="w-full bg-gray-600 rounded-full h-2">
-                                    <div class="bg-[#f30f48] h-2 rounded-full" style="width: 76%;"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- UI/UX Skill -->
-                        <div class="flex items-center space-x-4">
-                            <div class="w-10 h-10 flex items-center justify-center bg-gray-700 rounded-full">
-                                <img src="img/uiux.png" alt="UI/UX" class="w-6 h-6">
-                            </div>
-                            <div class="w-full">
-                                <p class="font-bold" style="color: #f30f48;">UI/UX - 92%</p>
-                                <div class="w-full bg-gray-600 rounded-full h-2">
-                                    <div class="bg-[#f30f48] h-2 rounded-full" style="width: 92%;"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Right Column: Analytical Skills -->
-                <div class="w-full;// md:w-1/3">
-                    <h2 class="text-3xl font-bold mb-4 border-b-2 border-[#f30f48] inline-block"
-                        style="color: #f30f48;">
-                        Analytical Skills</h2>
-                    <div class="flex flex-wrap gap-6">
-                        <!-- Skill Circle 1: Front-End Dev -->
-                        <div class="flex flex-col items-center">
-                            <div
-                                class="w-20 h-20 rounded-full border-2 border-[#f30f48] shadow-xl flex items-center justify-center">
-                                <span class="font-bold" style="color: #f30f48;">85%</span>
-                            </div>
-                            <p class="mt-2" style="color: #f30f48;">Front-End Dev</p>
-                        </div>
-                        <!-- Skill Circle 2: Responsive Web Design -->
-                        <div class="flex flex-col items-center">
-                            <div
-                                class="w-20 h-20 rounded-full border-2 border-[#f30f48] shadow-xl flex items-center justify-center">
-                                <span class="font-bold" style="color: #f30f48;">90%</span>
-                            </div>
-                            <p class="mt-2" style="color: #f30f48;">Responsive Web Design</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Digital Asset Engineer Section -->
-        <section id="digital-asset-engineer" class="fade-in relative">
+    <div class="grid">
+      <div class="card fx" data-delay="0">
+        <div class="kicker">Product</div>
+        <h3>UI/UX • Product Design</h3>
+        <p>Wireframing, prototyping, design systems, and user journeys that feel clean, premium, and intentional.</p>
+      </div>
 
-            <h2 class="text-4xl font-bold text-white text-center mb-6 uppercase tracking-wide">
-                Digital Asset Engineer
-            </h2>
+      <div class="card fx" data-delay="60">
+        <div class="kicker">Engineering</div>
+        <h3>Front-End Engineering</h3>
+        <p>Responsive builds, interface architecture, performance-minded UI, and clean shipping habits.</p>
+      </div>
 
-            <p class="text-lg text-gray-300 text-center leading-relaxed max-w-3xl mx-auto">
-                I specialize in Web Development, UI/UX Design, and Product Strategy to create seamless, high-performing
-                digital solutions. My expertise ensures functionality, efficiency, and user engagement.
-            </p>
+      <div class="card fx" data-delay="120">
+        <div class="kicker">Systems</div>
+        <h3>Workflows • Integrations</h3>
+        <p>App integration tools, booking flows, enterprise automation patterns, and workflow thinking.</p>
+      </div>
 
-            <!-- Expertise Section -->
-            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-300 text-lg">
+      <div class="card fx" data-delay="180">
+        <div class="kicker">Research-Aware</div>
+        <h3>Behavioral Intelligence</h3>
+        <p>Neuroscience-informed product thinking—context, patterns, and feedback loops that respect users.</p>
+      </div>
+    </div>
+  </section>
 
-                <div class="bg-black p-6 rounded-lg shadow-md border-l-2 border-[#f30f48]">
-                    <h3 class="text-xl font-semibold text-white mb-2">Web Development</h3>
-                    <p>
-                        Developing modern, responsive, high-performance websites using HTML, CSS, JavaScript, and
-                        React with a focus on clean UI, accessibility, and efficiencY.
-                    </p>
-                </div>
+  <footer class="mt-10 text-center py-2">
+    <div class="footer-text mb-2">
+      <p>&copy; 2025 Funbi Akintade. All rights reserved.</p>
+      <p>
+        Phone: +234-702-5511-392 |
+        Email: <a href="mailto:Ayipexfunby@gmail.com">Ayipexfunby@gmail.com</a>
+      </p>
+    </div>
 
-                <div class="bg-black p-6 rounded-lg shadow-md border-l-2 border-[#f30f48]">
-                    <h3 class="text-xl font-semibold text-white mb-2">UI/UX & Product Design</h3>
-                    <p>
-                        Designing user-centric interfaces with Figma & Adobe XD, ensuring intuitive, visually
-                        appealing experiences that align with business goals.
-                    </p>
-                </div>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/funbi-akintade-59a4ba237"  rel="noopener">
+        <img src="https://img.icons8.com/ios-filled/40/ffffff/linkedin.png" alt="LinkedIn" />
+      </a>
+      <a href="https://www.instagram.com/oluwafunbilayorr" rel="noopener">
+        <img src="https://img.icons8.com/ios-filled/40/ffffff/instagram-new.png" alt="Instagram" />
+      </a>
+      <a href="mailto:Ayipexfunby@gmail.com">
+        <img src="https://img.icons8.com/ios-filled/40/ffffff/email.png" alt="Email" />
+      </a>
+    </div>
+  </footer>
 
+  <script>
+    // Make every HealHubCenter mention go to your URL (so yes, you can click it “20 times” everywhere it appears)
+    const HEALHUB_URL = "https://www.healhubcenter.com";
+    document.querySelectorAll(".healhub-link").forEach(a => {
+      a.href = HEALHUB_URL;
+    });
 
-                <div class="bg-black p-6 rounded-lg shadow-md border-l-2 border-[#f30f48]">
-                    <h3 class="text-xl font-semibold text-white mb-2">Front-End Engineering</h3>
-                    <p>
-                        Writing efficient, scalable code to bring designs to life, specializing in React, Tailwind
-                        CSS, and JavaScript frameworks.
-                    </p>
-                </div>
+    // Animation observer that re-triggers when you scroll away and come back
+    const fxEls = document.querySelectorAll(".fx");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const delay = Number(entry.target.getAttribute("data-delay") || 0);
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add("in"), delay);
+        } else {
+          // ✅ re-trigger when you scroll back
+          entry.target.classList.remove("in");
+        }
+      });
+    }, { threshold: 0.2 });
 
+    fxEls.forEach(el => observer.observe(el));
 
-                <div class="bg-black p-6 rounded-lg shadow-md border-l-2 border-[#f30f48]">
-                    <h3 class="text-xl font-semibold text-white mb-2">Digital Product Strategy</h3>
-                    <p>
-                        Combining UX research, branding, and optimization to create high-value digital products that
-                        meet user needs and business goals.
-                    </p>
-                </div>
-            </div>
-
-
-            <div class="text-center mt-8">
-                <a href="cv.file/Funbi_Akintade_CV_2025.pdf" download
-                    class="inline-block bg-[#f30f48] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#e02036] transition duration-300">
-                    Download My CV
-                </a>
-            </div>
-        </section>
-
-
-        <footer class="mt-10 bg-black text-center py-2 border-t border-black">
-            <div class="footer-text mb-2">
-                <p>&copy; 2025 Funbi Akintade. All rights reserved.</p>
-                <p>Phone: +234-702-5511-392 | Email: <a href="mailto:Ayipexfunby@gmail.com"
-                        class="text-[#f30f48] hover:text-[#f30f48]">Ayipexfunby@gmail.com</a></p>
-            </div>
-            <div class="social-icons flex justify-center space-x-6">
-                <a href="https://www.linkedin.com/in/funbi-akintade-59a4ba237" target="_blank"
-                    class="hover:text-[#f30f48]">
-                    <img src="https://img.icons8.com/ios-filled/40/ffffff/linkedin.png" alt="LinkedIn" />
-                </a>
-                <a href="https://www.instagram.com/oluwafunbilayorr" target="_blank" class="hover:text-[#f30f48]">
-                    <img src="https://img.icons8.com/ios-filled/40/ffffff/instagram-new.png" alt="Instagram" />
-                </a>
-                <a href="mailto:Ayipexfunby@gmail.com" class="hover:text-[#f30f48]">
-                    <img src="https://img.icons8.com/ios-filled/40/ffffff/email.png" alt="Email" />
-                </a>
-            </div>
-        </footer>
-
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const fadeElements = document.querySelectorAll(".fade-in");
-                const observer = new IntersectionObserver(entries => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add("visible");
-                        }
-                    });
-                }, { threshold: 0.2 });
-
-                fadeElements.forEach(element => {
-                    observer.observe(element);
-                });
-            });
-        </script>
-
+    // "Surprise" load effect: animate hero immediately on load.
+    window.addEventListener("load", () => {
+      const hero = document.querySelector('[data-fx="hero"]');
+      if (hero) hero.classList.add("in");
+    });
+  </script>
 </body>
 
 </html>

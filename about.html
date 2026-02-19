@@ -4,13 +4,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About - Funbi Akintade</title>
+
+  <!-- Primary SEO -->
+  <title>Funbi Akintade | Founder of HealHubCenter | Product • Engineering • Partnerships • Advocacy</title>
+  <meta name="description"
+    content="Funbi Akintade is the Founder and CEO of HealHubCenter, building neuroscience-informed mental health AI. BPM Global 100 honoree (Oct 26, 2024). Product designer and front-end engineer focused on enterprise-grade experiences, partnerships, and scalable systems. Member of ForbesBLK, Forbes Women Africa, She Code Africa, and YALI Network. Published author of Before 21." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://boisterous-meerkat-45f2ab.netlify.app/about.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title"
+    content="Funbi Akintade | Founder of HealHubCenter | Product • Engineering • Partnerships" />
+  <meta property="og:description"
+    content="Founder building neuroscience-informed mental health AI. BPM Global 100 honoree. Product, front-end engineering, partnerships, and advocacy. Published author of Before 21." />
+  <meta property="og:type" content="profile" />
+  <meta property="og:image"
+    content="https://boisterous-meerkat-45f2ab.netlify.app/img/Black%20And%20White%20Minimalist%20Typography%20Personal%20Logo%20(1).png" />
+  <meta property="og:url" content="https://boisterous-meerkat-45f2ab.netlify.app/about.html" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap" />
+
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;700&display=swap"
-    rel="stylesheet" />
+
+  <!-- JSON-LD Person Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Funbi Akintade",
+    "jobTitle": "Founder and CEO, Product Designer, Front-End Engineer",
+    "description": "Founder and CEO of HealHubCenter building neuroscience-informed mental health AI. BPM Global 100 honoree (Oct 26, 2024). Member of ForbesBLK, Forbes Women Africa, She Code Africa, and YALI Network. Published author of Before 21.",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "HealHubCenter"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Ilorin"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/funbi-akintade-59a4ba237"
+    ]
+  }
+  </script>
+
   <style>
     :root {
-      --primary-pink: #f30f48;
+      --bg: #000;
+      --border: rgba(255, 255, 255, 0.12);
+      --border2: rgba(255, 255, 255, 0.18);
+      --dim: rgba(255, 255, 255, 0.72);
+
+      --blue: rgba(0, 119, 255, 0.92);
+      --blueA: rgba(0, 119, 255, 0.18);
+      --blueB: rgba(0, 119, 255, 0.12);
+      --blueC: rgba(0, 60, 150, 0.25);
     }
 
     html {
@@ -18,23 +73,216 @@
     }
 
     body {
-      background-color: #000;
+      background:
+        radial-gradient(circle at 14% 18%, var(--blueA), transparent 35%),
+        radial-gradient(circle at 86% 76%, var(--blueB), transparent 40%),
+        radial-gradient(circle at 50% 50%, var(--blueC), #000 70%);
+      background-color: var(--bg);
       color: #fff;
-      font-family: 'Roboto', sans-serif;
+      font-family: 'EB Garamond', serif;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: -30%;
+      background: radial-gradient(circle, rgba(0, 119, 255, 0.16) 0%, transparent 60%);
+      animation: floatGlow 18s ease-in-out infinite alternate;
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(120px);
+    }
+
+    @keyframes floatGlow {
+      0% {
+        transform: translate(-10%, -10%) scale(1);
+      }
+
+      50% {
+        transform: translate(10%, 5%) scale(1.1);
+      }
+
+      100% {
+        transform: translate(0%, 15%) scale(1);
+      }
+    }
+
+    .glass-header {
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .glass-side {
+      background: rgba(8, 8, 8, 0.86);
+      backdrop-filter: blur(10px);
+      border-right: 1px solid var(--border);
+    }
+
+    .brand-link {
+      color: rgba(255, 255, 255, 0.92);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0, 119, 255, 0.25);
+      transition: color 0.2s ease, border-color 0.2s ease;
+      font-weight: 600;
+    }
+
+    .brand-link:hover {
+      color: var(--blue);
+      border-color: rgba(0, 119, 255, 0.6);
+    }
+
+    .panel {
+      background: rgba(0, 0, 0, 0.46);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 20px 70px rgba(0, 0, 0, 0.65);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .panel::after {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: linear-gradient(110deg, transparent 40%, rgba(255, 255, 255, 0.06) 50%, transparent 60%);
+      transform: translateX(-60%) rotate(2deg);
+      opacity: 0;
+      pointer-events: none;
+      animation: shimmer 9s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+      0% {
+        transform: translateX(-60%) rotate(2deg);
+        opacity: 0;
+      }
+
+      12% {
+        opacity: 0.18;
+      }
+
+      22% {
+        opacity: 0.06;
+      }
+
+      45% {
+        transform: translateX(60%) rotate(2deg);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateX(60%) rotate(2deg);
+        opacity: 0;
+      }
+    }
+
+    .kicker {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.56);
+      font-size: 0.74rem;
+    }
+
+    .headline {
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      line-height: 1.06;
+      letter-spacing: 0.01em;
+      font-weight: 700;
+    }
+
+    .subhead {
+      color: var(--dim);
+      line-height: 1.75;
+      font-size: 1.18rem;
+      max-width: 62ch;
+    }
+
+    .pull-quote {
+      border-left: 2px solid rgba(0, 119, 255, 0.55);
+      padding-left: 18px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 1.2rem;
+      line-height: 1.65;
+    }
+
+    .chip {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      border: 1px solid var(--border);
+      background: rgba(0, 0, 0, 0.32);
+      border-radius: 999px;
+      padding: 10px 12px;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.74);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .chip:hover {
+      transform: translateY(-2px);
+      border-color: var(--border2);
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.34);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border2);
+      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.7);
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .card p,
+    .card li {
+      color: var(--dim);
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    .fx {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .fx.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .side-link:hover {
+      color: var(--blue);
     }
   </style>
 </head>
 
 <body class="pt-20">
   <!-- HEADER -->
-  <header class="fixed top-0 left-0 right-0 bg-black px-6 py-4 z-50 shadow-lg flex justify-between items-center">
-    <img src="img/Black And White Minimalist Typography Personal Logo (1).png" alt="Logo" class="h-12">
+  <header class="fixed top-0 left-0 right-0 px-6 py-4 z-50 shadow-lg flex justify-between items-center glass-header">
+    <img src="img/Black And White Minimalist Typography Personal Logo (1).png" alt="Funbi Akintade logo" class="h-12">
+
     <nav class="hidden lg:flex gap-8">
-      <a href="index.html" class="text-white font-medium hover:text-[#f30f48] transition">Home</a>
-      <a href="skill.html" class="text-white font-medium hover:text-[#f30f48] transition">Skills</a>
-      <a href="contact.html" class="text-white font-medium hover:text-[#f30f48] transition">Contact</a>
+      <a href="index.html" class="text-white font-medium hover:text-[rgba(0,119,255,0.92)] transition">Home</a>
+      <a href="contact.html" class="text-white font-medium hover:text-[rgba(0,119,255,0.92)] transition">Contact</a>
     </nav>
-    <button class="lg:hidden flex flex-col space-y-1" onclick="toggleSidebar()">
+
+    <button class="lg:hidden flex flex-col space-y-1" onclick="toggleSidebar()" aria-label="Open menu">
       <span class="w-6 h-0.5 bg-white"></span>
       <span class="w-6 h-0.5 bg-white"></span>
       <span class="w-6 h-0.5 bg-white"></span>
@@ -42,112 +290,417 @@
   </header>
 
   <!-- MOBILE SIDEBAR -->
-  <!-- MOBILE SIDEBAR -->
   <div id="mobileSidebar"
-    class="fixed inset-0 bg-black bg-opacity-95 z-40 hidden flex-col px-8 pt-24 space-y-6 transition duration-300 lg:hidden">
+    class="fixed inset-0 bg-black bg-opacity-95 z-40 hidden flex-col px-8 pt-24 space-y-6 lg:hidden">
     <div class="flex justify-center">
-      <img src="img/oppggg.PNG" alt="Profile" class="w-24 h-24 rounded-full object-cover shadow-lg">
+      <img src="img/oppggg.PNG" alt="Funbi Akintade portrait"
+        class="w-24 h-24 rounded-full object-cover shadow-lg border border-[rgba(255,255,255,0.12)]">
     </div>
-    <ul class="space-y-4">
-      <a href="index.html" class="text-white text-lg font-semibold hover:text-[#f30f48]">Home</a>
-      <a href="skill.html" class="text-white text-lg font-semibold hover:text-[#f30f48]">Skills</a>
-      <a href="contact.html" class="text-white text-lg font-semibold hover:text-[#f30f48]">Contact</a>
-      <li>
-        <hr class="border-[#f30f48]">
-      </li>
-      <li>
-        <a href="#introduction" class="text-white hover:text-[#f30f48]">Introduction</a>
-      </li>
-      <li>
-        <a href="#background" class="text-white hover:text-[#f30f48]">Background</a>
-      </li>
-      <li>
-        <a href="#impact" class="text-white hover:text-[#f30f48]">Innovation</a>
-      </li>
-      <li>
-        <a href="#expertise" class="text-white hover:text-[#f30f48]">Expertise</a>
-      </li>
-    </ul>
 
-    <button id="closeBtn" class="absolute top-4 right-4 text-3xl text-white">
+    <div class="flex flex-col gap-4">
+      <a href="index.html" class="text-white text-lg font-semibold hover:text-[rgba(0,119,255,0.92)]">Home</a>
+       <a href="contact.html" class="text-white text-lg font-semibold hover:text-[rgba(0,119,255,0.92)]">Contact</a>
+      <hr class="border-[rgba(255,255,255,0.12)] my-2" />
+      <a href="#feature" class="text-white hover:text-[rgba(0,119,255,0.92)]">Feature</a>
+      <a href="#signals" class="text-white hover:text-[rgba(0,119,255,0.92)]">Signals</a>
+      <a href="#collabs" class="text-white hover:text-[rgba(0,119,255,0.92)]">Collaborations</a>
+      <a href="#impact" class="text-white hover:text-[rgba(0,119,255,0.92)]">Impact</a>
+      <a href="#education" class="text-white hover:text-[rgba(0,119,255,0.92)]">Education</a>
+      <a href="#capabilities" class="text-white hover:text-[rgba(0,119,255,0.92)]">Capabilities</a>
+    </div>
+
+    <button id="closeBtn" class="absolute top-4 right-4 text-4xl text-white" aria-label="Close menu">
       &times;
     </button>
   </div>
 
-<div class="flex">
-  <!-- DESKTOP SIDEBAR -->
-  <aside class="hidden lg:flex flex-col fixed top-0 left-0 h-full w-64 bg-[#080808] border-r border-[#f30f48] pt-28 px-6 space-y-8 z-30">
-    <img src="img/oppggg.PNG" alt="Profile" class="w-24 h-24 rounded-full mx-auto object-cover shadow-lg mb-4 border-2 border-[#f30f48]">
-    <nav class="flex flex-col space-y-6 text-center">
-      <a href="#introduction" class="text-white hover:text-[#f30f48] transition duration-300">Introduction</a>
-      <a href="#background" class="text-white hover:text-[#f30f48] transition duration-300">Background</a>
-      <a href="#impact" class="text-white hover:text-[#f30f48] transition duration-300">Innovation</a>
-      <a href="#expertise" class="text-white hover:text-[#f30f48] transition duration-300">Expertise</a>
-    </nav>
-  </aside>
+  <div class="flex">
+    <!-- DESKTOP SIDEBAR -->
+    <aside class="hidden lg:flex flex-col fixed top-0 left-0 h-full w-72 glass-side pt-28 px-6 space-y-8 z-30">
+      <img src="img/oppggg.PNG" alt="Funbi Akintade portrait"
+        class="w-24 h-24 rounded-full mx-auto object-cover shadow-lg border border-[rgba(255,255,255,0.12)]">
 
-  <!-- MAIN CONTENT -->
-  <main class="flex-1 lg:ml-64 px-6 py-12 space-y-16">
-    <!-- Introduction -->
-    <section id="introduction" class="p-6 bg-[#050505] border border-gray-800 rounded-xl shadow-xl max-w-4xl mx-auto">
-      <h2 class="text-3xl font-bold text-[#f30f48] mb-4">Introduction</h2>
-      <p class="text-lg text-gray-300 leading-loose">Hello and welcome! I’m Funbi Akintade — a passionate designer-developer dedicated to transforming ideas into immersive digital experiences. My journey is rooted in research-driven design, accessibility, and innovation. Every click, every scroll — crafted with intention to make people feel seen.</p>
-    </section>
+      <div class="text-center">
+        <div class="kicker">Founder Profile</div>
+        <div class="text-xl font-semibold tracking-tight">Funbi Akintade</div>
+        <div class="text-sm text-[rgba(255,255,255,0.65)] font-sans mt-1">
+          Founder • Product • Engineering • Partnerships
+        </div>
+      </div>
 
-    <!-- Background -->
-    <section id="background" class="p-6 bg-[#050505] border border-gray-800 rounded-xl shadow-xl max-w-4xl mx-auto">
-      <h2 class="text-3xl font-bold text-[#f30f48] mb-4">Background</h2>
-      <p class="text-lg text-gray-300 leading-loose">I hold a BSc in Geography and Environmental Management from the University of Ilorin. That academic journey birthed a fire for sustainable, user-conscious design. Today, I merge that eco-lens with UI/UX mastery to build tech that’s not only functional but also mindful.</p>
-    </section>
+      <nav class="flex flex-col space-y-4 text-center">
+        <a href="#feature" class="text-white transition duration-300 side-link">Feature</a>
+        <a href="#signals" class="text-white transition duration-300 side-link">Signals</a>
+        <a href="#collabs" class="text-white transition duration-300 side-link">Collaborations</a>
+        <a href="#impact" class="text-white transition duration-300 side-link">Impact</a>
+        <a href="#education" class="text-white transition duration-300 side-link">Education</a>
+        <a href="#capabilities" class="text-white transition duration-300 side-link">Capabilities</a>
+      </nav>
 
-    <!-- Innovation -->
-    <section id="impact" class="p-6 bg-[#050505] border border-gray-800 rounded-xl shadow-xl max-w-4xl mx-auto">
-      <h2 class="text-3xl font-bold text-[#f30f48] mb-4">Innovation</h2>
-      <p class="text-lg text-gray-300 leading-loose mb-4">At HealHubCenter, innovation isn’t just a buzzword — it’s the heartbeat. We’re blending traditional wellness with modern tech to craft a global hub where healing meets high-impact design.</p>
-      <ul class="list-disc pl-6 text-gray-300 space-y-2">
-        <li>AI-powered mental health tools for real-time emotional support</li>
-        <li>Pop-up experiences in airports and malls with curated wellness merch</li>
-        <li>Mobile-first platforms tailored for underserved communities</li>
-        <li>Branded school supplies that spark mental health conversations</li>
-      </ul>
-    </section>
-
-
-      <!-- Expertise -->
-      <section id="expertise" class="p-6 bg-[#050505] border border-gray-800 rounded-xl shadow-xl max-w-4xl mx-auto">
-        <h2 class="text-3xl font-bold text-[#f30f48] mb-4">Expertise</h2>
-        <p class="text-lg text-gray-300 leading-loose mb-6">
-          I'm a systems-thinker, digital builder, and creative strategist. My skill set blends empathy-driven design
-          with full-stack development and global impact strategy. From AI-powered platforms to mental health ecosystems,
-          I craft tech that's scalable, accessible, and deeply human.
+      <div class="mt-auto pb-10">
+        <div class="kicker mb-2">Primary Link</div>
+        <a class="brand-link healhub-link" href="https://www.healhublopcenter.com" rel="noopener">
+          HealHubCenter
+        </a>
+        <p class="text-[rgba(255,255,255,0.62)] text-sm font-sans mt-3 leading-relaxed">
+          Neuroscience-informed mental health AI, built for scale.
         </p>
-        <ul class="list-disc pl-6 text-gray-300 space-y-3">
-          <li>Front-end mastery using HTML, CSS, JavaScript, Tailwind CSS, React.js, Next.js</li>
-          <li>UI/UX design rooted in accessibility, intuitive flows, and user psychology (Figma, Canva)</li>
-          <li>MongoDB and Firebase for scalable, secure backend systems</li>
-          <li>Product development across web apps, community platforms, and e-commerce</li>
-          <li>Brand strategy, content design, and storytelling across newsletters, podcasts, and social</li>
-          <li>Built and deployed AI chatbots, integrated API tools, and custom SaaS experiences</li>
-          <li>Led multi-platform launches (HealHubCenter, MiRAjO AI, MiRAjO Collective, pop-up shops)</li>
-          <li>Cross-cultural design thinker with experience in mental health, legal advocacy, and tech equity</li>
-        </ul>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-1 lg:ml-72 px-6 py-12 space-y-16">
+
+      <!-- FEATURE HERO -->
+      <section id="feature" class="panel p-8 md:p-10 max-w-5xl mx-auto fx">
+        <div class="kicker mb-3">Editorial Feature</div>
+        <h1 class="headline">
+          Funbi Akintade builds mental health systems with a neuroscience backbone and enterprise-level polish.
+        </h1>
+
+        <p class="subhead mt-5">
+          Founder and CEO of
+          <a class="brand-link healhub-link" href="https://www.healhubcenter.com" rel="noopener">HealHubCenter</a>,
+          I design and ship products where care feels human and the infrastructure scales like software should.
+          My work sits at the intersection of behavioral intelligence, product design, and front-end engineering.
+        </p>
+
+        <div class="mt-7 grid md:grid-cols-3 gap-3">
+          <span class="chip">BPM Global 100 • Oct 26, 2024</span>
+          <span class="chip">ForbesBLK</span>
+          <span class="chip">Forbes Women Africa</span>
+          <span class="chip">She Code Africa</span>
+          <span class="chip">YALI Network</span>
+          <span class="chip">Author • Before 21</span>
+        </div>
+
+        <div class="mt-8 pull-quote">
+          I do not “apply.” I collaborate, build, and move systems forward.
+        </div>
+      </section>
+      <p class="subhead mt-5">
+        Founder and CEO of
+        <a class="brand-link healhub-link" href="https://www.healhubcenter.com" rel="noopener">HealHubCenter</a>,
+        I design and engineer neuroscience-informed mental health AI that adapts in real time, with the polish of
+        enterprise product.
+      </p>
+
+      <div class="mt-8 card">
+        <div class="kicker mb-2">Computational Neuroscience, Applied</div>
+        <h3>How HealHubCenter adapts in real time</h3>
+        <p>
+          HealHubCenter is built on applied computational neuroscience and behavioral science research. Instead of
+          treating support
+          like a one-off chat, the system learns patterns over time and responds with context. It observes interaction
+          signals like
+          language tone, pacing, frequency, and routine shifts to infer a user’s moment-to-moment state and deliver more
+          appropriate support.
+        </p>
+        <p class="mt-3">
+          Under the hood, it uses signal-inspired modeling approaches drawn from years of research across affective
+          neuroscience,
+          cognitive behavioral frameworks, and learning systems. The result is personalized assistance that feels
+          intentional, not generic,
+          while respecting privacy and safety boundaries.
+        </p>
+        <p class="mt-3"
+          style="color: rgba(255,255,255,0.62); font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; font-size: 0.9rem;">
+          Note: HealHubCenter is a support platform and does not provide medical diagnosis. When risk is detected, the
+          system routes users to appropriate resources and professional care pathways.
+        </p>
+      </div>
+
+      <!-- SIGNALS -->
+      <section id="signals" class="max-w-5xl mx-auto grid md:grid-cols-2 gap-4 fx">
+        <div class="card">
+          <div class="kicker mb-2">Recognition</div>
+          <h3>BPM Global 100</h3>
+          <p>
+            Recognized on October 26th, 2024 as a leading Black professional.
+            The signal is simple: the work carries weight in rooms that matter.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="kicker mb-2">Authorship</div>
+          <h3><em>Before 21</em></h3>
+          <p>
+            Published an autobiography at 21.
+            A guide for people battling depression, shaped with clarity, honesty, and purpose.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="kicker mb-2">Advocacy</div>
+          <h3>Mental Health, Public Policy, Safety</h3>
+          <p>
+            I have spoken in events against domestic abuse and I care deeply about systems that protect people.
+            That perspective informs how I build products and communities.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="kicker mb-2">Founder Work</div>
+          <h3>HealHubCenter</h3>
+          <p>
+            Neuroscience-informed mental health AI.
+            A platform designed for scale, dignity, and real-world context, not theory.
+          </p>
+        </div>
       </section>
 
+      <!-- COLLABORATIONS -->
+      <section id="collabs" class="panel p-8 md:p-10 max-w-5xl mx-auto fx">
+        <div class="kicker mb-3">Collaborations</div>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">
+          Partnered with teams to ship outcomes, not just aesthetics.
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="card">
+            <h3>Product and Workflow Delivery</h3>
+            <p class="font-sans text-sm text-[rgba(255,255,255,0.62)]">MiRAjO AI and MiRAjO Collective</p>
+            <ul class="list-disc pl-5 mt-3 space-y-2">
+              <li>Built workflows that clarified how users, screens, and operations connect end to end.</li>
+              <li>Supported execution in fast-moving teams where decisions had to ship, not sit.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Design Systems and Web Experiences</h3>
+            <p class="font-sans text-sm text-[rgba(255,255,255,0.62)]">Peter Abiade and Co</p>
+            <ul class="list-disc pl-5 mt-3 space-y-2">
+              <li>Led UIUX and web build work with a focus on structure, polish, and usability.</li>
+              <li>Applied web standards to strengthen SEO and elevate engagement.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Cross-Functional UX Collaboration</h3>
+            <p class="font-sans text-sm text-[rgba(255,255,255,0.62)]">Evatini Nigeria</p>
+            <ul class="list-disc pl-5 mt-3 space-y-2">
+              <li>Collaborated with branding and design teams on UI for a rebranding initiative.</li>
+              <li>Delivered clean interface work that matched the new brand direction.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>International Creative Delivery</h3>
+            <p class="font-sans text-sm text-[rgba(255,255,255,0.62)]">BUP Synapse Summit, USA</p>
+            <ul class="list-disc pl-5 mt-3 space-y-2">
+              <li>Volunteered creative design and delivered under tight deadlines.</li>
+              <li>Worked remotely with an international team and kept quality intact.</li>
+            </ul>
+          </div>
+
+          <div class="card md:col-span-2">
+            <h3>Project Leadership at Scale</h3>
+            <p class="font-sans text-sm text-[rgba(255,255,255,0.62)]">Africa Credit Expo, 2,000+ Attendees</p>
+            <ul class="list-disc pl-5 mt-3 space-y-2">
+              <li>Led full-scale planning and execution including vendors, logistics, and speaker coordination.</li>
+              <li>Created marketing collateral and campaigns using Zoho supporting a 35% engagement lift year over year.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- IMPACT -->
+      <section id="impact" class="max-w-5xl mx-auto fx">
+        <div class="panel p-8 md:p-10">
+          <div class="kicker mb-3">Impact</div>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">Proof in motion, not performance.</h2>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="card">
+              <h3>HealHubCenter Social Impact Outreach</h3>
+              <p class="font-sans text-sm text-[rgba(255,255,255,0.62)]">300+ People Served</p>
+              <p class="mt-3">
+                Led outreach execution, logistics, volunteer coordination, and fundraising.
+                The goal was simple: structure empathy so it can scale.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>YALI Network Learning</h3>
+              <p class="font-sans text-sm text-[rgba(255,255,255,0.62)]">Certifications</p>
+              <ul class="list-disc pl-5 mt-3 space-y-2">
+                <li>Women in Politics, Peace, and Security</li>
+                <li>The Climate Crisis: Five Key Areas for Change</li>
+                <li>Understanding Human Rights</li>
+              </ul>
+            </div>
+
+            <div class="card md:col-span-2">
+              <h3>Volunteer Design</h3>
+              <p class="font-sans text-sm text-[rgba(255,255,255,0.62)]">We The Women Campaign, United Nations, USA</p>
+              <p class="mt-3">
+                Supported campaign design execution for a global awareness initiative.
+                Mission-aligned work that reflects the same values I build into products.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-7 font-sans text-sm text-[rgba(255,255,255,0.65)] leading-relaxed">
+            Senior signal: this page is written like a founder profile, not a job-seeker bio.
+            Clear roles, measurable outcomes, and credible affiliations help your name rank and your story land with
+            decision makers.
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section id="education" class="panel p-8 md:p-10 max-w-5xl mx-auto fx">
+        <div class="kicker mb-3">Education</div>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">Systems mindset, early.</h2>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="card">
+            <h3>University of Ilorin</h3>
+            <p class="mt-2">BSc, Geography and Environmental Management (2019 to 2024)</p>
+          </div>
+
+          <div class="card">
+            <h3>School of Politics, Policy and Governance</h3>
+            <p class="mt-2">Higher Education</p>
+          </div>
+
+          <div class="card">
+            <h3>Kingsfield College</h3>
+            <p class="mt-2">High School</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CAPABILITIES -->
+      <section id="capabilities" class="panel p-8 md:p-10 max-w-5xl mx-auto fx">
+        <div class="kicker mb-3">Capabilities</div>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">Founder range, with taste.</h2>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="card">
+            <h3>Product and UIUX</h3>
+            <ul class="list-disc pl-5 mt-2 space-y-2">
+              <li>Figma systems, prototyping, wireframes, journeys, and conversion-minded UX</li>
+              <li>Trust-first design patterns for healthcare and sensitive contexts</li>
+              <li>Design systems that scale without losing quality</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Front-End Engineering</h3>
+            <ul class="list-disc pl-5 mt-2 space-y-2">
+              <li>HTML, CSS, JavaScript, Tailwind CSS, React, Next.js</li>
+              <li>Responsive architecture and performance-minded UI delivery</li>
+              <li>Clean implementation that reads premium</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Data and Backend Familiarity</h3>
+            <ul class="list-disc pl-5 mt-2 space-y-2">
+              <li>MongoDB, Firebase</li>
+              <li>Integration thinking, workflows, and system logic</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Partnerships and Strategy</h3>
+            <ul class="list-disc pl-5 mt-2 space-y-2">
+              <li>Stakeholder alignment, execution planning, delivery under pressure</li>
+              <li>Public speaking, advocacy framing, and policy-aware storytelling</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section id="mechanism" class="panel p-8 md:p-10 max-w-5xl mx-auto fx">
+        <div class="kicker mb-3">Mechanism</div>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">
+          State, context, and support that evolves.
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="card">
+            <h3>Signal Capture</h3>
+            <p>
+              The platform tracks non-sensitive interaction signals such as language style, response timing, session
+              cadence,
+              and routine consistency to understand how a user’s experience is changing across time.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Pattern Modeling</h3>
+            <p>
+              Behavioral patterns are modeled over time so the system can adapt, not reset. That enables continuity of
+              care:
+              fewer generic replies and more context-aware support.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Intervention Logic</h3>
+            <p>
+              Support is aligned with cognitive behavioral frameworks and safe conversational practices, with escalation
+              paths
+              for high-risk situations.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Privacy and Safety</h3>
+            <p>
+              Designed to respect user autonomy and avoid invasive surveillance patterns. The goal is helpful
+              personalization,
+              not over-collection.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="max-w-5xl mx-auto fx">
+        <div class="panel p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div>
+            <div class="kicker mb-2">Primary</div>
+            <h2 class="text-3xl font-bold">HealHubCenter</h2>
+            <p class="subhead mt-3">
+              Explore the platform at
+              <a class="brand-link healhub-link" href="https://www.healhubcenter.com"
+                rel="noopener">HealhubCenter.com</a>
+              and connect for partnerships, speaking, and product collaborations.
+            </p>
+          </div>
+
+          <div class="flex gap-3 font-sans">
+            <a href="contact.html"
+              class="px-5 py-3 rounded-full border border-[rgba(255,255,255,0.16)] bg-[rgba(0,0,0,0.35)] hover:border-[rgba(255,255,255,0.28)] transition">
+              Contact
+            </a>
+            <a href="https://www.linkedin.com/in/funbi-akintade-59a4ba237" rel="noopener"
+              class="px-5 py-3 rounded-full border border-[rgba(0,119,255,0.35)] bg-[rgba(0,119,255,0.10)] hover:border-[rgba(0,119,255,0.60)] transition">
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </section>
 
     </main>
   </div>
 
   <!-- FOOTER -->
-  <footer class="bg-black text-white text-center py-8 text-sm border-t border-gray-800">
+  <footer class="bg-black text-white text-center py-8 text-sm border-t border-[rgba(255,255,255,0.10)] relative z-10">
     &copy; 2025 Funbi Akintade. All rights reserved.
   </footer>
 
   <script>
+    const HEALHUB_URL = "https://www.healhubcenter.com";
+    document.querySelectorAll(".healhub-link").forEach(a => a.href = HEALHUB_URL);
+
     function toggleSidebar() {
       document.getElementById('mobileSidebar').classList.toggle('hidden');
     }
 
-    // Close sidebar with the close button
     document.addEventListener('DOMContentLoaded', function () {
       const closeBtn = document.getElementById('closeBtn');
       const mobileSidebar = document.getElementById('mobileSidebar');
@@ -156,6 +709,16 @@
           mobileSidebar.classList.add('hidden');
         });
       }
+
+      const fxEls = document.querySelectorAll(".fx");
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add("in");
+          else entry.target.classList.remove("in");
+        });
+      }, { threshold: 0.18 });
+
+      fxEls.forEach(el => obs.observe(el));
     });
   </script>
 </body>

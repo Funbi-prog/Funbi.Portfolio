@@ -4,438 +4,516 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact - Funbi Akintade</title>
+  <title>Contact — Funbi Akintade</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap" />
+
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.js"></script>
+
   <style>
     :root {
-      --primary-pink: #f30f48;
+      --bg: #000;
+      --border: rgba(255, 255, 255, 0.12);
+      --border2: rgba(255, 255, 255, 0.18);
+      --dim: rgba(255, 255, 255, 0.72);
+      --faint: rgba(255, 255, 255, 0.55);
+
+      --blue: rgba(0, 119, 255, 0.92);
+      --blueA: rgba(0, 119, 255, 0.18);
+      --blueB: rgba(0, 119, 255, 0.12);
+      --blueC: rgba(0, 60, 150, 0.25);
+
+      --pink: rgba(243, 15, 72, 0.85);
     }
-    @keyframes magic3d {
-      0% {
-        opacity: 0;
-        transform: perspective(600px) rotateX(0deg) translateY(20px);
-      }
-      100% {
-        opacity: 1;
-        transform: perspective(600px) rotateX(0deg) translateY(0);
-      }
-    }
-    /* Fade-in Animation */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-    .fade-in.visible {
-      animation: magic3d 0.8s ease-out forwards;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
+
+    html { scroll-behavior: smooth; }
+
     body {
-      background-color: black;
-      color: white;
-      margin: 0;
-      padding: 0;
-      position: relative;
-      font-family: 'Roboto', sans-serif;
+      background:
+        radial-gradient(circle at 14% 18%, var(--blueA), transparent 35%),
+        radial-gradient(circle at 86% 76%, var(--blueB), transparent 40%),
+        radial-gradient(circle at 50% 50%, var(--blueC), #000 70%);
+      background-color: var(--bg);
+      color: #fff;
+      font-family: 'EB Garamond', serif;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
-    /* Navbar */
+
+    /* Premium floating glow */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: -30%;
+      background: radial-gradient(circle, rgba(0, 119, 255, 0.16) 0%, transparent 60%);
+      animation: floatGlow 18s ease-in-out infinite alternate;
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(120px);
+    }
+
+    @keyframes floatGlow {
+      0% { transform: translate(-10%, -10%) scale(1); }
+      50% { transform: translate(10%, 5%) scale(1.1); }
+      100% { transform: translate(0%, 15%) scale(1); }
+    }
+
+    /* Motion */
+    @keyframes magic3d {
+      0% { opacity: 0; transform: perspective(600px) translateY(18px); }
+      100% { opacity: 1; transform: perspective(600px) translateY(0); }
+    }
+
+    .fx {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+      position: relative;
+      z-index: 1;
+    }
+
+    .fx.in {
+      opacity: 1;
+      transform: translateY(0);
+      animation: magic3d 0.7s ease-out;
+    }
+
+    /* Header glass */
     header {
       position: fixed;
       top: 0;
       width: 100%;
-      background-color: black;
-      padding: 5px 10px;
-      z-index: 20;
+      z-index: 50;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      padding: 10px 18px;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 10px 35px rgba(0,0,0,0.55);
     }
-    header img.navbar-img {
-      height: 5rem;
+
+    header img {
+      height: 3.6rem;
     }
-    @media (max-width: 768px) {
-      header img.navbar-img {
-        height: 3rem;
-      }
-    }
-    .navbar-left,
-    .navbar-right {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      z-index: 21;
-    }
-    .navbar-left a,
-    .navbar-right a {
-      text-decoration: none;
-      font-weight: bold;
-      color: white;
-    }
-    .navbar-left a:hover,
-    .navbar-right a:hover {
-      color: var(--primary-pink);
-    }
-    /* Fixed Background Image */
-    .fixed-image-right {
-      position: fixed;
-      top: 10%;
-      right: 2%;
-      height: 77vh;
-      width: auto;
-      z-index: -1;
-    }
-    /* On small screens, change the image behavior so it doesn’t squeeze */
-    @media (max-width: 768px) {
-      .fixed-image-right {
-        position: absolute; /* Or consider display: none; if you prefer hiding it */
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: auto;
-        opacity: 0.2;
-      }
-    }
-    /* Sections */
-    section {
-      margin-top: 120px;
-      padding: 50px 10%;
-      text-align: left;
-    }
-    .intro-text {
-      text-align: left;
-      max-width: 700px;
-      font-size: 2.5rem;
-      font-weight: bold;
-    }
-    .intro-text .nigeria {
-      color: var(--primary-pink);
-    }
-    /* FAQ Section */
-    .faq-section {
-      margin: 40px 5%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .faq-title {
-      text-align: center;
-      font-size: 2rem;
-      font-weight: bold;
-      color: var(--primary-pink);
-      margin-bottom: 20px;
-    }
-    .faq-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
+
     @media (min-width: 768px) {
-      .faq-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+      header { padding: 12px 40px; }
+      header img { height: 4.4rem; }
     }
-    .faq-box {
-      background-color: #111;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: rgba(255,255,255,0.86);
+      letter-spacing: 0.02em;
+      transition: color 0.2s ease;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-size: 0.95rem;
     }
-    .faq-box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
-    }
-    .faq-question {
-      font-size: 1.25rem;
-      font-weight: bold;
-      color: var(--primary-pink);
-      margin-bottom: 10px;
-    }
-    .faq-answer {
-      font-size: 1rem;
-      color: #ccc;
-    }
-    /* Help Box */
-    .help-box {
-      margin: 40px 5%;
-      max-width: 1200px;
-      background: linear-gradient(135deg, var(--primary-pink), transparent);
-      padding: 20px;
-      border-radius: 8px;
-      text-align: center;
-      color: white;
-      font-size: 1.25rem;
-      font-weight: bold;
-      box-shadow: 0 4px 8px rgba(243, 15, 72, 0.5);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .help-box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(243, 15, 72, 0.7);
-    }
-    /* Contact Form Section */
-    #contact {
-      background-color: black;
-      padding: 40px 5%;
-      margin-top: 20px;
-      border-radius: 8px;
+
+    .nav-links a:hover { color: var(--blue); }
+
+    /* Panel */
+    .panel {
+      background: rgba(0, 0, 0, 0.46);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 20px 70px rgba(0, 0, 0, 0.65);
       position: relative;
-      z-index: 1;
-      width: 90%;
-      max-width: 1200px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
     }
-    #contact::after {
+
+    .panel::after {
       content: "";
       position: absolute;
-      left: 0;
-      bottom: -15px;
-      width: 100%;
-      height: 10px;
-      background: var(--primary-pink);
-      filter: blur(8px);
-      opacity: 0.8;
-      border-radius: 4px;
+      inset: -40%;
+      background: linear-gradient(110deg, transparent 40%, rgba(255,255,255,0.06) 50%, transparent 60%);
+      transform: translateX(-60%) rotate(2deg);
+      opacity: 0;
+      pointer-events: none;
+      animation: shimmer 9s ease-in-out infinite;
     }
-    .contact-form input,
-    .contact-form textarea {
-      padding: 12px;
-      background-color: #1f2937;
-      color: white;
-      border: 2px solid var(--primary-pink);
-      border-radius: 8px;
-      width: 100%;
-      margin-bottom: 16px;
-      transition: box-shadow 0.3s ease;
+
+    @keyframes shimmer {
+      0% { transform: translateX(-60%) rotate(2deg); opacity: 0; }
+      12% { opacity: 0.18; }
+      22% { opacity: 0.06; }
+      45% { transform: translateX(60%) rotate(2deg); opacity: 0; }
+      100% { transform: translateX(60%) rotate(2deg); opacity: 0; }
     }
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      outline: none;
-      box-shadow: 0 0 8px var(--primary-pink);
+
+    .kicker {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.56);
+      font-size: 0.74rem;
     }
-    .contact-form button {
-      padding: 12px;
-      border-radius: 8px;
-      background-color: var(--primary-pink);
-      color: white;
-      font-weight: bold;
-      width: 100%;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+    .headline {
+      font-size: clamp(2.1rem, 4vw, 3.4rem);
+      line-height: 1.05;
+      letter-spacing: 0.01em;
+      font-weight: 700;
     }
-    .contact-form button:hover {
-      background-color: #e02036;
-      box-shadow: 0 0 8px var(--primary-pink);
+
+    .subhead {
+      color: var(--dim);
+      line-height: 1.75;
+      font-size: 1.18rem;
+      max-width: 62ch;
     }
-    /* Footer */
-    footer {
-      background-color: black;
-      color: white;
-      padding: 20px 5%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 100px;
-    }
-    footer .footer-text {
-      margin-bottom: 10px;
-      text-align: center;
+
+    /* Contact pills */
+    .pill {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      border: 1px solid var(--border);
+      background: rgba(0,0,0,0.32);
+      border-radius: 999px;
+      padding: 12px 14px;
       font-size: 0.9rem;
+      color: rgba(255,255,255,0.78);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+      user-select: none;
     }
-    footer .social-icons {
-      display: flex;
-      gap: 15px;
+
+    .pill:hover {
+      transform: translateY(-2px);
+      border-color: var(--border2);
     }
-    footer .social-icons a {
-      color: white;
-      font-size: 1.5rem;
-      transition: color 0.3s ease;
+
+    .pill strong { color: rgba(255,255,255,0.92); font-weight: 700; }
+
+    .btn {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      border-radius: 999px;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      background: rgba(0,0,0,0.35);
+      transition: border-color 0.2s ease, transform 0.2s ease;
+      color: rgba(255,255,255,0.88);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
     }
-    footer .social-icons a:hover {
-      color: #38bdf8;
+
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: var(--border2);
     }
-    @media (max-width: 768px) {
-      section {
-        padding: 30px 5%;
-        margin-top: 80px;
-      }
-      .intro-text {
-        font-size: 2rem;
-      }
-      .fixed-image-right {
-        height: 50vh;
-        top: 20%;
-        right: 5%;
-      }
+
+    .btn-primary {
+      border: 1px solid rgba(0,119,255,0.35);
+      background: rgba(0,119,255,0.12);
+    }
+
+    .btn-primary:hover {
+      border-color: rgba(0,119,255,0.6);
+    }
+
+    /* Form inputs */
+    .field {
+      width: 100%;
+      padding: 14px 14px;
+      border-radius: 14px;
+      background: rgba(15, 15, 15, 0.65);
+      border: 1px solid var(--border);
+      color: rgba(255,255,255,0.92);
+      outline: none;
+      transition: box-shadow 0.2s ease, border-color 0.2s ease;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    .field:focus {
+      border-color: rgba(0,119,255,0.55);
+      box-shadow: 0 0 0 4px rgba(0,119,255,0.16);
+    }
+
+    .muted {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: rgba(255,255,255,0.62);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    .note {
+      border-left: 2px solid rgba(0,119,255,0.55);
+      padding-left: 14px;
+      color: rgba(255,255,255,0.82);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    footer {
+      margin-top: 60px;
+      padding: 26px 18px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(10px);
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (min-width: 768px) {
+      footer { padding: 28px 40px; }
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 22px;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.75);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: rgba(255,255,255,0.9);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-size: 0.9rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      z-index: 999;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-4px);
     }
   </style>
 </head>
 
-<body class="bg-black text-white">
+<body class="pt-20">
   <!-- Header -->
-  <header class="flex justify-between items-center transition-all">
+  <header>
     <div class="navbar-left">
-      <img src="img/Black And White Minimalist Typography Personal Logo (1).png" alt="Logo" style="height: 5rem;">
+      <img src="img/Black And White Minimalist Typography Personal Logo (1).png" alt="Funbi Akintade logo" />
     </div>
-    <div class="navbar-right">
-      <nav>
-        <ul class="flex space-x-6">
-          <li><a href="index.html" class="text-white hover:text-blue-500 font-bold">Home</a></li>
-          <li><a href="about.html" class="text-white hover:text-blue-500 font-bold">About</a></li>
-          <li><a href="skill.html" class="text-white hover:text-blue-500 font-bold">Skills</a></li>
-        </ul>
-      </nav>
-    </div>
+
+    <nav class="nav-links">
+      <ul class="hidden md:flex space-x-8">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" style="color: rgba(0,119,255,0.92);">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="md:hidden"></div>
   </header>
 
-  <!-- Blurred Background Image (Adjusted for Mobile) -->
-  <div class="absolute inset-0">
-    <div class="bg-cover bg-center opacity-30 filter blur-sm" style="background-image: url('img/tactme.jpg');"></div>
-  </div>
+  <main class="px-6 md:px-10 py-12 space-y-10">
 
-<!-- Contact Page Intro Section with Blurred Background Image -->
-<section class="relative h-[50vh] flex flex-col justify-center items-center text-center px-4">
-    <!-- Blurred background image -->
-    <div class="absolute inset-0 bg-cover bg-center opacity-30 filter blur-sm" style="background-image: url('img/tactme.jpg');"></div>
-    <!-- Content Layer -->
-    <div class="relative z-10">
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-[#f30f48]">
-        Get in Touch
+    <!-- FEATURE HERO -->
+    <section class="panel p-8 md:p-10 max-w-5xl mx-auto fx">
+      <div class="kicker mb-3">Contact</div>
+      <h1 class="headline">
+        Let’s build something worth shipping.
       </h1>
-      <p class="mt-4 max-w-xl text-lg md:text-xl leading-relaxed text-gray-300">
-        I'm here to help and would love to hear from you. Whether you have a project to work on or make enquiries, feel free to reach out.
-      </p>
-    </div>
-  </section>
-  
-  
-  
 
-  <!-- FAQ Section -->
-  <section class="faq-section fade-in" style="margin-top: 20px;">
-    <h2 class="faq-title">Frequently Asked Questions</h2>
-    <div class="faq-grid">
-      <div class="faq-box">
-        <div class="faq-question">How can I get in touch with you?</div>
-        <div class="faq-answer">You can reach me directly through the contact form below or via email/phone listed in the footer.</div>
+      <p class="subhead mt-5">
+        Partnerships, speaking, product collaboration, press. If it’s serious, I’m interested.
+        For HealHubCenter, visit
+        <a href="https://www.healhubcenter.com" rel="noopener"
+          style="color: rgba(0,119,255,0.92); border-bottom: 1px solid rgba(0,119,255,0.25); text-decoration: none; font-weight: 700;">
+         healhubcenter.com
+        </a>.
+      </p>
+
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a class="btn btn-primary" href="mailto:Ayipexfunby@gmail.com">
+          Email
+        </a>
+
+        <a class="btn" href="https://www.linkedin.com/in/funbi-akintade-59a4ba237" rel="noopener">
+          LinkedIn
+        </a>
+
+        <button class="pill" type="button" onclick="copyText('Ayipexfunby@gmail.com', 'Email copied')">
+          <strong>Copy</strong> email
+        </button>
+
+        <button class="pill" type="button" onclick="copyText('+2347025511392', 'Phone copied')">
+          <strong>Copy</strong> phone
+        </button>
       </div>
-      <div class="faq-box">
-        <div class="faq-question">What services do you offer?</div>
-        <div class="faq-answer">I provide comprehensive UI/UX design and front-end development services tailored to create intuitive digital experiences.</div>
+
+      <div class="mt-8 note">
+        Response speed depends on the ask. If you have a clear scope, timeline, and target outcome, we move faster.
       </div>
-      <div class="faq-box">
-        <div class="faq-question">What does a Digital Asset Engineer do?</div>
-        <div class="faq-answer">
-          As a Digital Asset Engineer, I optimize and manage your digital assets—ensuring that your online resources are efficient, secure, and impactful. This role enhances both design and functionality, improving your digital presence.
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section class="panel p-8 md:p-10 max-w-5xl mx-auto fx">
+      <div class="kicker mb-3">Message</div>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-3">Send a note</h2>
+      <p class="muted mb-7">
+        Short and specific wins. What are we building, why now, and what does success look like
+      </p>
+
+      <form class="contact-form grid gap-4" id="contactForm">
+        <div class="grid md:grid-cols-2 gap-4">
+          <input class="field" type="text" name="from_name" placeholder="Your name" required />
+          <input class="field" type="email" name="from_email" placeholder="Your email" required />
+        </div>
+
+        <input class="field" type="text" name="subject" placeholder="Subject (partnership, speaking, product)" />
+
+        <textarea class="field" name="message" rows="6"
+          placeholder="Your message. Include scope, timeline, and the outcome you want." required></textarea>
+
+        <button class="btn btn-primary w-full md:w-auto" type="submit">
+          Send message
+        </button>
+
+        <p class="muted">
+          Prefer email. Use <a href="mailto:Ayipexfunby@gmail.com" style="color: rgba(0,119,255,0.92); text-decoration:none; border-bottom:1px solid rgba(0,119,255,0.25);">Ayipexfunby@gmail.com</a>.
+        </p>
+      </form>
+    </section>
+
+    <!-- FAQ (SHORT + SENIOR) -->
+    <section class="panel p-8 md:p-10 max-w-5xl mx-auto fx">
+      <div class="kicker mb-3">FAQs</div>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="p-5 rounded-2xl" style="border:1px solid var(--border); background: rgba(0,0,0,0.32);">
+          <div class="text-xl font-bold mb-2" style="color: rgba(255,255,255,0.92);">What do you take on</div>
+          <p class="muted">Product design, front-end execution, and systems thinking for teams building high-trust experiences.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl" style="border:1px solid var(--border); background: rgba(0,0,0,0.32);">
+          <div class="text-xl font-bold mb-2" style="color: rgba(255,255,255,0.92);">How should I reach out</div>
+          <p class="muted">Send scope, timeline, constraints, and the outcome. If it’s vague, it drags. If it’s clear, we fly.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl" style="border:1px solid var(--border); background: rgba(0,0,0,0.32);">
+          <div class="text-xl font-bold mb-2" style="color: rgba(255,255,255,0.92);">Do you do speaking</div>
+          <p class="muted">Yes. Mental health, product, public policy, leadership, and building with constraints. Send theme + audience.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl" style="border:1px solid var(--border); background: rgba(0,0,0,0.32);">
+          <div class="text-xl font-bold mb-2" style="color: rgba(255,255,255,0.92);">What about HealHubCenter</div>
+          <p class="muted">For enterprise and platform inquiries, use the HealHubCenter link above. This page is for direct contact.</p>
         </div>
       </div>
-      <div class="faq-box">
-        <div class="faq-question">Can I request a custom project?</div>
-        <div class="faq-answer">Absolutely—I'm open to discussing custom projects to bring your unique vision to life.</div>
-      </div>
-      <div class="faq-box">
-        <div class="faq-question">What is your turnaround time?</div>
-        <div class="faq-answer">Turnaround times vary based on project scope. Please contact me directly for detailed timelines and quotes.</div>
-      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="muted">
+      &copy; 2025 Funbi Akintade. All rights reserved.
+      <br />
+      Phone: <a href="tel:+2347025511392" style="color: rgba(0,119,255,0.92); text-decoration:none;">+234-702-5511-392</a>
+      &nbsp;|&nbsp;
+      Email: <a href="mailto:Ayipexfunby@gmail.com" style="color: rgba(0,119,255,0.92); text-decoration:none;">Ayipexfunby@gmail.com</a>
     </div>
-  </section>
 
-  <!-- "Need More Help?" Fancy Box -->
-  <section class="help-box fade-in" style="margin-top: 20px;">
-    Need more help? Reach out directly or check out the FAQs above.
-  </section>
-
-  <!-- Contact Form Section -->
-  <section id="contact" class="fade-in" style="background-color: black; padding: 40px 5%; margin-top: 20px; border-radius: 8px;">
-    <h2 class="text-2xl font-semibold mb-4 text-white">Contact Me</h2>
-    <!-- Note: 'contact' is the form name used by Netlify -->
-    <form name="contact" method="POST" data-netlify="true" class="contact-form">
-      <input type="hidden" name="form-name" value="contact" />
-      <input type="text" placeholder="Your Name" name="from_name" required
-        class="p-3 bg-gray-800 text-white rounded-lg mb-4 w-full border-2 border-[var(--primary-pink)] shadow-md hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[var(--primary-pink)]">
-      <input type="email" placeholder="Your Email" name="from_email" required
-        class="p-3 bg-gray-800 text-white rounded-lg mb-4 w-full border-2 border-[var(--primary-pink)] shadow-md hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[var(--primary-pink)]">
-      <textarea placeholder="Your Message" name="message" required
-        class="p-3 bg-gray-800 text-white rounded-lg mb-4 w-full h-40 border-2 border-[var(--primary-pink)] shadow-md hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[var(--primary-pink)]"></textarea>
-      <div class="flex justify-between gap-2">
-        <button type="submit"
-          class="btn-submit p-3 rounded-lg bg-[var(--primary-pink)] text-white font-bold hover:bg-[#e02036] flex-1 shadow-md hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[var(--primary-pink)]">
-          Send Message
-        </button>
-        <a href="cv.file/Funbi_Akintade_CV_2025.pdf" download>
-          <button type="button"
-            class="btn-download p-3 rounded-lg bg-[var(--primary-pink)] text-white font-bold hover:bg-[#e02036] flex-1 shadow-md hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[var(--primary-pink)]">
-            Download CV
-          </button>
-        </a>
-      </div>
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer class="mt-16 bg-black text-center py-2 border-t border-gray-700">
-    <div class="footer-text mb-2" style="text-align: center;">
-      <p>&copy; 2025 Funbi Akintade. All rights reserved.</p>
-      <p>Phone: +234-702-5511-392 | Email: <a href="mailto:Ayipexfunby@gmail.com" class="text-[var(--primary-pink)]">Ayipexfunby@gmail.com</a></p>
-    </div>
-    <div class="social-icons flex justify-center space-x-6">
-      <a href="https://www.linkedin.com/in/funbi-akintade-59a4ba237" target="_blank" class="hover:text-[var(--primary-pink)]">
+    <div class="flex justify-center gap-5 mt-4">
+      <a href="https://www.linkedin.com/in/funbi-akintade-59a4ba237"  rel="noopener">
         <img src="https://img.icons8.com/ios-filled/40/ffffff/linkedin.png" alt="LinkedIn" />
       </a>
-      <a href="https://www.instagram.com/oluwafunbilayorr" target="_blank" class="hover:text-[var(--primary-pink)]">
+      <a href="https://www.instagram.com/oluwafunbilayorr"  rel="noopener">
         <img src="https://img.icons8.com/ios-filled/40/ffffff/instagram-new.png" alt="Instagram" />
       </a>
-      <a href="mailto:Ayipexfunby@gmail.com" class="hover:text-[var(--primary-pink)]">
+      <a href="mailto:Ayipexfunby@gmail.com">
         <img src="https://img.icons8.com/ios-filled/40/ffffff/email.png" alt="Email" />
       </a>
     </div>
   </footer>
 
+  <div id="toast" class="toast">Copied</div>
+
   <script>
+    function showToast(text) {
+      const toast = document.getElementById('toast');
+      toast.textContent = text;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 1600);
+    }
+
+    async function copyText(text, toastMsg) {
+      try {
+        await navigator.clipboard.writeText(text);
+        showToast(toastMsg || "Copied");
+      } catch (e) {
+        // fallback
+        const temp = document.createElement("textarea");
+        temp.value = text;
+        document.body.appendChild(temp);
+        temp.select();
+        document.execCommand("copy");
+        temp.remove();
+        showToast(toastMsg || "Copied");
+      }
+    }
+
+    // Scroll-trigger animations (re-triggers when you return)
     document.addEventListener("DOMContentLoaded", function () {
-      const fadeElements = document.querySelectorAll(".fade-in");
-      const observer = new IntersectionObserver(entries => {
+      const fxEls = document.querySelectorAll(".fx");
+      const obs = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
+          if (entry.isIntersecting) entry.target.classList.add("in");
+          else entry.target.classList.remove("in");
         });
-      }, { threshold: 0.2 });
-      fadeElements.forEach(element => {
-        observer.observe(element);
-      });
+      }, { threshold: 0.18 });
+
+      fxEls.forEach(el => obs.observe(el));
     });
   </script>
 
-  <!-- EmailJS Integration -->
+  <!-- EmailJS Integration (kept clean; no Netlify double-submit) -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       emailjs.init("DWOvyty0GTFHkYl6A"); // Your Public Key
-      const form = document.querySelector('.contact-form');
+
+      const form = document.getElementById("contactForm");
+
       form.addEventListener("submit", function (event) {
         event.preventDefault();
+
         const formData = {
-          from_name: document.querySelector("input[name='from_name']").value,
-          from_email: document.querySelector("input[name='from_email']").value,
-          message: document.querySelector("textarea[name='message']").value
+          from_name: form.querySelector("input[name='from_name']").value,
+          from_email: form.querySelector("input[name='from_email']").value,
+          subject: form.querySelector("input[name='subject']").value || "Website Contact",
+          message: form.querySelector("textarea[name='message']").value
         };
+
+        const btn = form.querySelector("button[type='submit']");
+        const oldText = btn.textContent;
+        btn.textContent = "Sending...";
+        btn.disabled = true;
+
         emailjs.send("service_upvgnsg", "template_znk4562", formData)
-          .then(function (response) {
-            alert("Message sent successfully!");
-            console.log("Success:", response);
+          .then(function () {
+            showToast("Message sent");
             form.reset();
-          }, function (error) {
-            alert("Failed to send message. Please try again.");
-            console.log("Error:", error);
+          })
+          .catch(function () {
+            showToast("Failed to send. Try email instead.");
+          })
+          .finally(function () {
+            btn.textContent = oldText;
+            btn.disabled = false;
           });
       });
     });
   </script>
-</body>
 
+</body>
 </html>
