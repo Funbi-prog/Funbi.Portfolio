@@ -5,14 +5,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Primary SEO -->
   <title>Funbi Akintade | Founder of HealHubCenter | Product • Engineering • Partnerships • Advocacy</title>
   <meta name="description"
     content="Funbi Akintade is the Founder and CEO of HealHubCenter, building neuroscience-informed mental health AI. BPM Global 100 honoree (Oct 26, 2024). Product designer and front-end engineer focused on enterprise-grade experiences, partnerships, and scalable systems. Member of ForbesBLK, Forbes Women Africa, She Code Africa, and YALI Network. Published author of Before 21." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://boisterous-meerkat-45f2ab.netlify.app/about.html" />
 
-  <!-- Open Graph -->
   <meta property="og:title"
     content="Funbi Akintade | Founder of HealHubCenter | Product • Engineering • Partnerships" />
   <meta property="og:description"
@@ -21,19 +19,14 @@
   <meta property="og:image"
     content="https://boisterous-meerkat-45f2ab.netlify.app/img/Black%20And%20White%20Minimalist%20Typography%20Personal%20Logo%20(1).png" />
   <meta property="og:url" content="https://boisterous-meerkat-45f2ab.netlify.app/about.html" />
-
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap" />
-
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- JSON-LD Person Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -41,17 +34,9 @@
     "name": "Funbi Akintade",
     "jobTitle": "Founder and CEO, Product Designer, Front-End Engineer",
     "description": "Founder and CEO of HealHubCenter building neuroscience-informed mental health AI. BPM Global 100 honoree (Oct 26, 2024). Member of ForbesBLK, Forbes Women Africa, She Code Africa, and YALI Network. Published author of Before 21.",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "HealHubCenter"
-    },
-    "alumniOf": {
-      "@type": "CollegeOrUniversity",
-      "name": "University of Ilorin"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/in/funbi-akintade-59a4ba237"
-    ]
+    "worksFor": { "@type": "Organization", "name": "HealHubCenter" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Ilorin" },
+    "sameAs": ["https://www.linkedin.com/in/funbi-akintade-59a4ba237"]
   }
   </script>
 
@@ -61,7 +46,6 @@
       --border: rgba(255, 255, 255, 0.12);
       --border2: rgba(255, 255, 255, 0.18);
       --dim: rgba(255, 255, 255, 0.72);
-
       --blue: rgba(0, 119, 255, 0.92);
       --blueA: rgba(0, 119, 255, 0.18);
       --blueB: rgba(0, 119, 255, 0.12);
@@ -253,11 +237,61 @@
       font-size: 1.05rem;
     }
 
+    .live-link {
+      display: inline-block;
+      margin-top: 12px;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      color: rgba(0, 119, 255, 0.85);
+      border-bottom: 1px solid rgba(0, 119, 255, 0.3);
+      text-decoration: none;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .live-link:hover {
+      color: var(--blue);
+      border-color: rgba(0, 119, 255, 0.7);
+    }
+
+    /* stat row */
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .stat-box {
+      background: rgba(0, 119, 255, 0.07);
+      border: 1px solid rgba(0, 119, 255, 0.22);
+      border-radius: 12px;
+      padding: 16px 14px;
+      text-align: center;
+    }
+
+    .stat-box .num {
+      display: block;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.1;
+    }
+
+    .stat-box .label {
+      display: block;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.55);
+      margin-top: 5px;
+    }
+
     .fx {
       opacity: 0;
       transform: translateY(18px);
-      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
-        transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
       will-change: opacity, transform;
     }
 
@@ -273,15 +307,14 @@
 </head>
 
 <body class="pt-20">
+
   <!-- HEADER -->
   <header class="fixed top-0 left-0 right-0 px-6 py-4 z-50 shadow-lg flex justify-between items-center glass-header">
     <img src="img/Black And White Minimalist Typography Personal Logo (1).png" alt="Funbi Akintade logo" class="h-12">
-
     <nav class="hidden lg:flex gap-8">
       <a href="index.html" class="text-white font-medium hover:text-[rgba(0,119,255,0.92)] transition">Home</a>
       <a href="contact.html" class="text-white font-medium hover:text-[rgba(0,119,255,0.92)] transition">Contact</a>
     </nav>
-
     <button class="lg:hidden flex flex-col space-y-1" onclick="toggleSidebar()" aria-label="Open menu">
       <span class="w-6 h-0.5 bg-white"></span>
       <span class="w-6 h-0.5 bg-white"></span>
@@ -296,52 +329,45 @@
       <img src="img/oppggg.PNG" alt="Funbi Akintade portrait"
         class="w-24 h-24 rounded-full object-cover shadow-lg border border-[rgba(255,255,255,0.12)]">
     </div>
-
     <div class="flex flex-col gap-4">
       <a href="index.html" class="text-white text-lg font-semibold hover:text-[rgba(0,119,255,0.92)]">Home</a>
-       <a href="contact.html" class="text-white text-lg font-semibold hover:text-[rgba(0,119,255,0.92)]">Contact</a>
+      <a href="contact.html" class="text-white text-lg font-semibold hover:text-[rgba(0,119,255,0.92)]">Contact</a>
       <hr class="border-[rgba(255,255,255,0.12)] my-2" />
       <a href="#feature" class="text-white hover:text-[rgba(0,119,255,0.92)]">Feature</a>
       <a href="#signals" class="text-white hover:text-[rgba(0,119,255,0.92)]">Signals</a>
+      <a href="#work" class="text-white hover:text-[rgba(0,119,255,0.92)]">Work</a>
       <a href="#collabs" class="text-white hover:text-[rgba(0,119,255,0.92)]">Collaborations</a>
       <a href="#impact" class="text-white hover:text-[rgba(0,119,255,0.92)]">Impact</a>
       <a href="#education" class="text-white hover:text-[rgba(0,119,255,0.92)]">Education</a>
       <a href="#capabilities" class="text-white hover:text-[rgba(0,119,255,0.92)]">Capabilities</a>
     </div>
-
-    <button id="closeBtn" class="absolute top-4 right-4 text-4xl text-white" aria-label="Close menu">
-      &times;
-    </button>
+    <button id="closeBtn" class="absolute top-4 right-4 text-4xl text-white" aria-label="Close menu">&times;</button>
   </div>
 
   <div class="flex">
+
     <!-- DESKTOP SIDEBAR -->
     <aside class="hidden lg:flex flex-col fixed top-0 left-0 h-full w-72 glass-side pt-28 px-6 space-y-8 z-30">
       <img src="img/oppggg.PNG" alt="Funbi Akintade portrait"
         class="w-24 h-24 rounded-full mx-auto object-cover shadow-lg border border-[rgba(255,255,255,0.12)]">
-
       <div class="text-center">
         <div class="kicker">Founder Profile</div>
         <div class="text-xl font-semibold tracking-tight">Funbi Akintade</div>
-        <div class="text-sm text-[rgba(255,255,255,0.65)] font-sans mt-1">
-          Founder • Product • Engineering • Partnerships
+        <div class="text-sm text-[rgba(255,255,255,0.65)] font-sans mt-1">Founder • Product • Engineering • Partnerships
         </div>
       </div>
-
       <nav class="flex flex-col space-y-4 text-center">
         <a href="#feature" class="text-white transition duration-300 side-link">Feature</a>
         <a href="#signals" class="text-white transition duration-300 side-link">Signals</a>
+        <a href="#work" class="text-white transition duration-300 side-link">Work</a>
         <a href="#collabs" class="text-white transition duration-300 side-link">Collaborations</a>
         <a href="#impact" class="text-white transition duration-300 side-link">Impact</a>
         <a href="#education" class="text-white transition duration-300 side-link">Education</a>
         <a href="#capabilities" class="text-white transition duration-300 side-link">Capabilities</a>
       </nav>
-
       <div class="mt-auto pb-10">
         <div class="kicker mb-2">Primary Link</div>
-        <a class="brand-link healhub-link" href="https://www.healhublopcenter.com" rel="noopener">
-          HealHubCenter
-        </a>
+        <a class="brand-link healhub-link" href="https://www.healhubcenter.com" rel="noopener">HealHubCenter</a>
         <p class="text-[rgba(255,255,255,0.62)] text-sm font-sans mt-3 leading-relaxed">
           Neuroscience-informed mental health AI, built for scale.
         </p>
@@ -354,18 +380,39 @@
       <!-- FEATURE HERO -->
       <section id="feature" class="panel p-8 md:p-10 max-w-5xl mx-auto fx">
         <div class="kicker mb-3">Editorial Feature</div>
+
         <h1 class="headline">
-          Funbi Akintade builds mental health systems with a neuroscience backbone and enterprise-level polish.
+          Frontend and Product Engineer building production grade AI platforms from zero to launch.
         </h1>
 
         <p class="subhead mt-5">
           Founder and CEO of
-          <a class="brand-link healhub-link" href="https://www.healhubcenter.com" rel="noopener">HealHubCenter</a>,
-          I design and ship products where care feels human and the infrastructure scales like software should.
-          My work sits at the intersection of behavioral intelligence, product design, and front-end engineering.
+          <a class="brand-link healhub-link" href="https://www.healhubcenter.com" rel="noopener">HealHubCenter</a>.
+          I design and ship complete products end to end React, Next.js, Tailwind, and full UI systems with a track
+          record of taking live platforms from brief to browser under real pressure.
         </p>
 
-        <div class="mt-7 grid md:grid-cols-3 gap-3">
+        <!-- NUMBERS -->
+        <div class="stat-row">
+          <div class="stat-box">
+            <span class="num">3+</span>
+            <span class="label">Production platforms shipped</span>
+          </div>
+          <div class="stat-box">
+            <span class="num">24hrs</span>
+            <span class="label">Full AI product UI delivered</span>
+          </div>
+          <div class="stat-box">
+            <span class="num">0 to 1</span>
+            <span class="label">Every project, from scratch</span>
+          </div>
+          <div class="stat-box">
+            <span class="num">Live</span>
+            <span class="label">All platforms actively deployed</span>
+          </div>
+        </div>
+
+        <div class="mt-8 grid md:grid-cols-3 gap-3">
           <span class="chip">BPM Global 100 • Oct 26, 2024</span>
           <span class="chip">ForbesBLK</span>
           <span class="chip">Forbes Women Africa</span>
@@ -375,77 +422,94 @@
         </div>
 
         <div class="mt-8 pull-quote">
-          I do not “apply.” I collaborate, build, and move systems forward.
+          A builder looking for a system worth contributing to. I have already built similar systems end to end and can
+          walk you through live products.
         </div>
       </section>
-      <p class="subhead mt-5">
-        Founder and CEO of
-        <a class="brand-link healhub-link" href="https://www.healhubcenter.com" rel="noopener">HealHubCenter</a>,
-        I design and engineer neuroscience-informed mental health AI that adapts in real time, with the polish of
-        enterprise product.
-      </p>
-
-      <div class="mt-8 card">
-        <div class="kicker mb-2">Computational Neuroscience, Applied</div>
-        <h3>How HealHubCenter adapts in real time</h3>
-        <p>
-          HealHubCenter is built on applied computational neuroscience and behavioral science research. Instead of
-          treating support
-          like a one-off chat, the system learns patterns over time and responds with context. It observes interaction
-          signals like
-          language tone, pacing, frequency, and routine shifts to infer a user’s moment-to-moment state and deliver more
-          appropriate support.
-        </p>
-        <p class="mt-3">
-          Under the hood, it uses signal-inspired modeling approaches drawn from years of research across affective
-          neuroscience,
-          cognitive behavioral frameworks, and learning systems. The result is personalized assistance that feels
-          intentional, not generic,
-          while respecting privacy and safety boundaries.
-        </p>
-        <p class="mt-3"
-          style="color: rgba(255,255,255,0.62); font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; font-size: 0.9rem;">
-          Note: HealHubCenter is a support platform and does not provide medical diagnosis. When risk is detected, the
-          system routes users to appropriate resources and professional care pathways.
-        </p>
-      </div>
 
       <!-- SIGNALS -->
       <section id="signals" class="max-w-5xl mx-auto grid md:grid-cols-2 gap-4 fx">
         <div class="card">
           <div class="kicker mb-2">Recognition</div>
           <h3>BPM Global 100</h3>
-          <p>
-            Recognized on October 26th, 2024 as a leading Black professional.
-            The signal is simple: the work carries weight in rooms that matter.
-          </p>
+          <p>Recognized on October 26th, 2024 as a leading Black professional. The signal is simple: the work carries
+            weight in rooms that matter.</p>
         </div>
-
         <div class="card">
           <div class="kicker mb-2">Authorship</div>
           <h3><em>Before 21</em></h3>
-          <p>
-            Published an autobiography at 21.
-            A guide for people battling depression, shaped with clarity, honesty, and purpose.
-          </p>
+          <p>Published an autobiography at 21. A guide for people navigating depression, shaped with clarity, honesty,
+            and purpose.</p>
         </div>
-
         <div class="card">
           <div class="kicker mb-2">Advocacy</div>
           <h3>Mental Health, Public Policy, Safety</h3>
-          <p>
-            I have spoken in events against domestic abuse and I care deeply about systems that protect people.
-            That perspective informs how I build products and communities.
-          </p>
+          <p>Spoken at events against domestic abuse and deeply invested in systems that protect people. That
+            perspective informs every product and community I build.</p>
         </div>
-
         <div class="card">
           <div class="kicker mb-2">Founder Work</div>
           <h3>HealHubCenter</h3>
-          <p>
-            Neuroscience-informed mental health AI.
-            A platform designed for scale, dignity, and real-world context, not theory.
-          </p>
+          <p>Neuroscience-informed mental health AI. A platform designed for scale, dignity, and real-world context not
+            theory.</p>
+          <a class="live-link" href="https://www.healhubcenter.com"  rel="noopener">healhubcenter.com
+            ↗</a>
+        </div>
+      </section>
+
+      <!-- SHIPPED WORK -->
+      <section id="work" class="panel p-8 md:p-10 max-w-5xl mx-auto fx">
+        <div class="kicker mb-3">Shipped Work</div>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-2">Designed, built, and live in production.</h2>
+        <p class="subhead mb-6">Every link below is a deployed platform. Not a mockup. Not a concept. Shipped.</p>
+
+        <div class="grid md:grid-cols-2 gap-4">
+
+          <div class="card">
+            <div class="kicker mb-2">AI · SaaS · Conversational Systems</div>
+            <h3>Mirajo AI</h3>
+            <p>Led product design, creative direction, and frontend development for an AI-powered SaaS platform enabling
+              businesses to deploy intelligent chat agents and voice bots that ensure no customer interaction is missed.
+              Built scalable UI systems, optimized user flows, and delivered a production-ready platform supporting
+              real-time communication automation.</p>
+            <a class="live-link" href="https://www.mirajo.ai" rel="noopener">mirajo.ai ↗</a>
+          </div>
+
+          <div class="card">
+            <div class="kicker mb-2">Mental Health · AI Platform</div>
+            <h3>HealHubCenter — Marketing Site</h3>
+            <p>Led the end-to-end development of a conversion-focused platform for an AI-driven mental health ecosystem,
+              integrating intelligent support systems and community-based care. Designed for responsiveness,
+              performance, and user trust, with a scalable design system across HealHub properties.</p>
+            <a class="live-link" href="https://www.healhubcenter.com" rel="noopener">healhubcenter.com
+              ↗</a>
+          </div>
+
+          <div class="card">
+            <div class="kicker mb-2">Mental Health · AI Enterprise</div>
+            <h3>HealHubCenter Enterprise AI Solutions</h3>
+            <p>Developed the enterprise-facing experience for HealHubCenter, delivering custom AI-powered mental health
+              bots tailored to client-specific use cases. Focused on scalable architecture, intelligent interaction
+              design, and seamless integration of personalized support systems across diverse environments.</p>
+            <a class="live-link" href="https://www.healhubcenter.com" rel="noopener">healhubcenter.com
+              ↗</a>
+          </div>
+
+          <div class="card">
+            <div class="kicker mb-2">Personal Brand · Web</div>
+            <h3>Koyin Sanusi</h3>
+            <p>Led full product design and frontend delivery for a personal brand site. Typography-driven layout, custom
+              UI system, and clean implementation shipped to a live domain.</p>
+            <a class="live-link" href="https://www.koyinsanusi.bio"  rel="noopener">koyinsanusi.bio ↗</a>
+          </div>
+
+          <div class="card md:col-span-2">
+            <div class="kicker mb-2">Creative · Campaigns</div>
+            <h3>Brand and Creative Work</h3>
+            <p>Delivered campaign design, newsletters, flyers, and social assets across multiple brands.
+              Strategy-informed, outcome-driven, and built to convert. Full portfolio available on request.</p>
+          </div>
+
         </div>
       </section>
 
@@ -453,55 +517,62 @@
       <section id="collabs" class="panel p-8 md:p-10 max-w-5xl mx-auto fx">
         <div class="kicker mb-3">Collaborations</div>
         <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">
-          Partnered with teams to ship outcomes, not just aesthetics.
+          Driving product execution, design systems, and real-world impact across teams.
         </h2>
 
         <div class="grid md:grid-cols-2 gap-4">
+
           <div class="card">
-            <h3>Product and Workflow Delivery</h3>
-            <p class="font-sans text-sm text-[rgba(255,255,255,0.62)]">MiRAjO AI and MiRAjO Collective</p>
+            <h3>Product Execution & Workflow Systems</h3>
+            <p class="font-sans text-sm text-[rgba(255,255,255,0.62)]">MiRAjO AI · MiRAjO Collective</p>
             <ul class="list-disc pl-5 mt-3 space-y-2">
-              <li>Built workflows that clarified how users, screens, and operations connect end to end.</li>
-              <li>Supported execution in fast-moving teams where decisions had to ship, not sit.</li>
+              <li>Designed and implemented end-to-end product workflows connecting user experience, system logic, and
+                business operations.</li>
+              <li>Operated within fast-paced startup environments, driving execution from concept to production without
+                bottlenecks.</li>
             </ul>
           </div>
 
           <div class="card">
-            <h3>Design Systems and Web Experiences</h3>
-            <p class="font-sans text-sm text-[rgba(255,255,255,0.62)]">Peter Abiade and Co</p>
+            <h3>Design Systems & Frontend Architecture</h3>
+            <p class="font-sans text-sm text-[rgba(255,255,255,0.62)]">Peter Abiade & Co</p>
             <ul class="list-disc pl-5 mt-3 space-y-2">
-              <li>Led UIUX and web build work with a focus on structure, polish, and usability.</li>
-              <li>Applied web standards to strengthen SEO and elevate engagement.</li>
+              <li>Led UI/UX design and frontend development, building scalable design systems and responsive web
+                interfaces.</li>
+              <li>Applied modern web standards to improve performance, SEO visibility, and overall user engagement.</li>
             </ul>
           </div>
 
           <div class="card">
-            <h3>Cross-Functional UX Collaboration</h3>
+            <h3>Cross-Functional UX & Brand Integration</h3>
             <p class="font-sans text-sm text-[rgba(255,255,255,0.62)]">Evatini Nigeria</p>
             <ul class="list-disc pl-5 mt-3 space-y-2">
-              <li>Collaborated with branding and design teams on UI for a rebranding initiative.</li>
-              <li>Delivered clean interface work that matched the new brand direction.</li>
+              <li>Collaborated with multidisciplinary teams to deliver UI aligned with a full-scale brand
+                transformation.</li>
+              <li>Translated brand identity into consistent, high-fidelity digital experiences across platforms.</li>
             </ul>
           </div>
 
           <div class="card">
-            <h3>International Creative Delivery</h3>
+            <h3>Global Creative Execution</h3>
             <p class="font-sans text-sm text-[rgba(255,255,255,0.62)]">BUP Synapse Summit, USA</p>
             <ul class="list-disc pl-5 mt-3 space-y-2">
-              <li>Volunteered creative design and delivered under tight deadlines.</li>
-              <li>Worked remotely with an international team and kept quality intact.</li>
+              <li>Delivered high-quality creative assets under tight international timelines.</li>
+              <li>Collaborated remotely with cross-border teams while maintaining consistency and execution speed.</li>
             </ul>
           </div>
 
           <div class="card md:col-span-2">
-            <h3>Project Leadership at Scale</h3>
-            <p class="font-sans text-sm text-[rgba(255,255,255,0.62)]">Africa Credit Expo, 2,000+ Attendees</p>
+            <h3>Large-Scale Product & Event Leadership</h3>
+            <p class="font-sans text-sm text-[rgba(255,255,255,0.62)]">Africa Credit Expo — 2,000+ Attendees</p>
             <ul class="list-disc pl-5 mt-3 space-y-2">
-              <li>Led full-scale planning and execution including vendors, logistics, and speaker coordination.</li>
-              <li>Created marketing collateral and campaigns using Zoho supporting a 35% engagement lift year over year.
+              <li>Led end-to-end execution of a large-scale industry event, managing vendors, logistics, and stakeholder
+                coordination.</li>
+              <li>Developed and executed marketing campaigns (Zoho) that increased engagement by 35% year-over-year.
               </li>
             </ul>
           </div>
+
         </div>
       </section>
 
@@ -510,41 +581,28 @@
         <div class="panel p-8 md:p-10">
           <div class="kicker mb-3">Impact</div>
           <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">Proof in motion, not performance.</h2>
-
           <div class="grid md:grid-cols-2 gap-4">
             <div class="card">
               <h3>HealHubCenter Social Impact Outreach</h3>
-              <p class="font-sans text-sm text-[rgba(255,255,255,0.62)]">300+ People Served</p>
-              <p class="mt-3">
-                Led outreach execution, logistics, volunteer coordination, and fundraising.
-                The goal was simple: structure empathy so it can scale.
-              </p>
+              <p class="font-sans text-sm text-[rgba(255,255,255,0.62)]">500+ People Served</p>
+              <p class="mt-3">Led outreach execution, logistics, volunteer coordination, and fundraising. Built the
+                structure for empathy to scale beyond one person.</p>
             </div>
-
             <div class="card">
-              <h3>YALI Network Learning</h3>
-              <p class="font-sans text-sm text-[rgba(255,255,255,0.62)]">Certifications</p>
+              <h3>YALI Network</h3>
+              <p class="font-sans text-sm text-[rgba(255,255,255,0.62)]">Certified</p>
               <ul class="list-disc pl-5 mt-3 space-y-2">
                 <li>Women in Politics, Peace, and Security</li>
                 <li>The Climate Crisis: Five Key Areas for Change</li>
                 <li>Understanding Human Rights</li>
               </ul>
             </div>
-
             <div class="card md:col-span-2">
               <h3>Volunteer Design</h3>
               <p class="font-sans text-sm text-[rgba(255,255,255,0.62)]">We The Women Campaign, United Nations, USA</p>
-              <p class="mt-3">
-                Supported campaign design execution for a global awareness initiative.
-                Mission-aligned work that reflects the same values I build into products.
-              </p>
+              <p class="mt-3">Supported campaign design execution for a global awareness initiative. Mission-aligned
+                work that reflects the same values built into every product.</p>
             </div>
-          </div>
-
-          <div class="mt-7 font-sans text-sm text-[rgba(255,255,255,0.65)] leading-relaxed">
-            Senior signal: this page is written like a founder profile, not a job-seeker bio.
-            Clear roles, measurable outcomes, and credible affiliations help your name rank and your story land with
-            decision makers.
           </div>
         </div>
       </section>
@@ -553,18 +611,15 @@
       <section id="education" class="panel p-8 md:p-10 max-w-5xl mx-auto fx">
         <div class="kicker mb-3">Education</div>
         <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">Systems mindset, early.</h2>
-
         <div class="grid md:grid-cols-2 gap-4">
           <div class="card">
             <h3>University of Ilorin</h3>
             <p class="mt-2">BSc, Geography and Environmental Management (2019 to 2024)</p>
           </div>
-
           <div class="card">
             <h3>School of Politics, Policy and Governance</h3>
             <p class="mt-2">Higher Education</p>
           </div>
-
           <div class="card">
             <h3>Kingsfield College</h3>
             <p class="mt-2">High School</p>
@@ -576,26 +631,23 @@
       <section id="capabilities" class="panel p-8 md:p-10 max-w-5xl mx-auto fx">
         <div class="kicker mb-3">Capabilities</div>
         <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">Founder range, with taste.</h2>
-
         <div class="grid md:grid-cols-2 gap-4">
           <div class="card">
-            <h3>Product and UIUX</h3>
+            <h3>Product and UI/UX</h3>
             <ul class="list-disc pl-5 mt-2 space-y-2">
               <li>Figma systems, prototyping, wireframes, journeys, and conversion-minded UX</li>
               <li>Trust-first design patterns for healthcare and sensitive contexts</li>
               <li>Design systems that scale without losing quality</li>
             </ul>
           </div>
-
           <div class="card">
             <h3>Front-End Engineering</h3>
             <ul class="list-disc pl-5 mt-2 space-y-2">
               <li>HTML, CSS, JavaScript, Tailwind CSS, React, Next.js</li>
               <li>Responsive architecture and performance-minded UI delivery</li>
-              <li>Clean implementation that reads premium</li>
+              <li>Clean implementation that reads premium at every breakpoint</li>
             </ul>
           </div>
-
           <div class="card">
             <h3>Data and Backend Familiarity</h3>
             <ul class="list-disc pl-5 mt-2 space-y-2">
@@ -603,7 +655,6 @@
               <li>Integration thinking, workflows, and system logic</li>
             </ul>
           </div>
-
           <div class="card">
             <h3>Partnerships and Strategy</h3>
             <ul class="list-disc pl-5 mt-2 space-y-2">
@@ -613,47 +664,31 @@
           </div>
         </div>
       </section>
+
+      <!-- MECHANISM -->
       <section id="mechanism" class="panel p-8 md:p-10 max-w-5xl mx-auto fx">
         <div class="kicker mb-3">Mechanism</div>
-        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">
-          State, context, and support that evolves.
-        </h2>
-
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">State, context, and support that evolves.</h2>
         <div class="grid md:grid-cols-2 gap-4">
           <div class="card">
             <h3>Signal Capture</h3>
-            <p>
-              The platform tracks non-sensitive interaction signals such as language style, response timing, session
-              cadence,
-              and routine consistency to understand how a user’s experience is changing across time.
-            </p>
+            <p>The platform tracks non-sensitive interaction signals including language style, response timing, session
+              cadence, and routine consistency to understand how a user's experience is changing across time.</p>
           </div>
-
           <div class="card">
             <h3>Pattern Modeling</h3>
-            <p>
-              Behavioral patterns are modeled over time so the system can adapt, not reset. That enables continuity of
-              care:
-              fewer generic replies and more context-aware support.
-            </p>
+            <p>Behavioral patterns are modeled over time so the system can adapt, not reset. That enables continuity of
+              care: fewer generic replies and more context-aware support.</p>
           </div>
-
           <div class="card">
             <h3>Intervention Logic</h3>
-            <p>
-              Support is aligned with cognitive behavioral frameworks and safe conversational practices, with escalation
-              paths
-              for high-risk situations.
-            </p>
+            <p>Support is aligned with cognitive behavioral frameworks and safe conversational practices, with
+              escalation paths for high-risk situations.</p>
           </div>
-
           <div class="card">
             <h3>Privacy and Safety</h3>
-            <p>
-              Designed to respect user autonomy and avoid invasive surveillance patterns. The goal is helpful
-              personalization,
-              not over-collection.
-            </p>
+            <p>Designed to respect user autonomy and avoid invasive surveillance patterns. The goal is helpful
+              personalization, not over-collection.</p>
           </div>
         </div>
       </section>
@@ -667,20 +702,15 @@
             <p class="subhead mt-3">
               Explore the platform at
               <a class="brand-link healhub-link" href="https://www.healhubcenter.com"
-                rel="noopener">HealhubCenter.com</a>
+                rel="noopener">healhubcenter.com</a>
               and connect for partnerships, speaking, and product collaborations.
             </p>
           </div>
-
           <div class="flex gap-3 font-sans">
             <a href="contact.html"
-              class="px-5 py-3 rounded-full border border-[rgba(255,255,255,0.16)] bg-[rgba(0,0,0,0.35)] hover:border-[rgba(255,255,255,0.28)] transition">
-              Contact
-            </a>
+              class="px-5 py-3 rounded-full border border-[rgba(255,255,255,0.16)] bg-[rgba(0,0,0,0.35)] hover:border-[rgba(255,255,255,0.28)] transition">Contact</a>
             <a href="https://www.linkedin.com/in/funbi-akintade-59a4ba237" rel="noopener"
-              class="px-5 py-3 rounded-full border border-[rgba(0,119,255,0.35)] bg-[rgba(0,119,255,0.10)] hover:border-[rgba(0,119,255,0.60)] transition">
-              LinkedIn
-            </a>
+              class="px-5 py-3 rounded-full border border-[rgba(0,119,255,0.35)] bg-[rgba(0,119,255,0.10)] hover:border-[rgba(0,119,255,0.60)] transition">LinkedIn</a>
           </div>
         </div>
       </section>
