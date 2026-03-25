@@ -20,14 +20,15 @@
   <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-
-  <!-- ✅ Garamond -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap" />
 
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     :root {
       --bg: #000000;
@@ -40,6 +41,10 @@
       --blueA: rgba(0, 119, 255, 0.18);
       --blueB: rgba(0, 119, 255, 0.12);
       --blueC: rgba(0, 60, 150, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
@@ -56,7 +61,6 @@
       overflow-x: hidden;
     }
 
-    /* moving glow */
     body::before {
       content: "";
       position: fixed;
@@ -69,50 +73,88 @@
     }
 
     @keyframes floatGlow {
-      0% { transform: translate(-10%, -10%) scale(1); }
-      50% { transform: translate(10%, 5%) scale(1.1); }
-      100% { transform: translate(0%, 15%) scale(1); }
+      0% {
+        transform: translate(-10%, -10%) scale(1);
+      }
+
+      50% {
+        transform: translate(10%, 5%) scale(1.1);
+      }
+
+      100% {
+        transform: translate(0%, 15%) scale(1);
+      }
     }
 
-    /* Header */
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
     header {
       position: fixed;
       top: 0;
+      left: 0;
       width: 100%;
       background: rgba(0, 0, 0, 0.75);
       backdrop-filter: blur(10px);
-      padding: 16px 40px;
+      border-bottom: 1px solid var(--border);
       z-index: 20;
+    }
+
+    .header-inner {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      min-height: 88px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid var(--border);
+      gap: 20px;
     }
 
-    header img { height: 5rem; z-index: 21; }
+    header img {
+      height: 5rem;
+      display: block;
+    }
+
+    .navbar-right ul {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
 
     .navbar-right a {
       text-decoration: none;
       font-weight: 600;
       color: rgba(255, 255, 255, 0.85);
       letter-spacing: 0.02em;
+      transition: color 0.2s ease;
     }
 
-    .navbar-right a:hover { color: var(--blue); }
+    .navbar-right a:hover {
+      color: var(--blue);
+    }
 
     section {
-      margin-top: 110px;
-      padding: 52px 10%;
       position: relative;
       z-index: 1;
     }
 
-    /* Animation system (re-triggers) */
+    .section-block {
+      margin-top: 40px;
+    }
+
     .fx {
       opacity: 0;
       transform: translateY(22px);
-      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-                  transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      transition:
+        opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
       will-change: opacity, transform;
     }
 
@@ -121,40 +163,61 @@
       transform: translateY(0);
     }
 
-    .fx-left { transform: translateX(-22px); }
-    .fx-right { transform: translateX(22px); }
-    .fx-left.in, .fx-right.in { transform: translateX(0); }
+    .fx-left {
+      transform: translateX(-22px);
+    }
 
-    /* HERO */
+    .fx-right {
+      transform: translateX(22px);
+    }
+
+    .fx-left.in,
+    .fx-right.in {
+      transform: translateX(0);
+    }
+
     .hero {
+      padding-top: 150px;
+      padding-bottom: 40px;
       min-height: 72vh;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding-top: 40px;
+      align-items: center;
     }
 
-    /* ✅ reduced size */
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr);
+      gap: 24px;
+      width: 100%;
+    }
+
     .intro-text {
       max-width: 920px;
-      font-size: clamp(1.7rem, 3.2vw, 2.7rem); /* smaller + controlled */
+      font-size: clamp(2rem, 4.4vw, 4.1rem);
       font-weight: 600;
-      line-height: 1.08;
+      line-height: 1.02;
       letter-spacing: 0.01em;
+      margin: 0;
     }
 
-    .accent { color: var(--blue); }
+    .accent {
+      color: var(--blue);
+    }
 
     .hero-sub {
-      max-width: 920px;
-      margin-top: 16px;
-      font-size: 1.18rem;
-      line-height: 1.75;
+      max-width: 860px;
+      margin: 0;
+      font-size: 1.15rem;
+      line-height: 1.8;
       color: var(--text-dim);
     }
 
+    .hero-stack {
+      display: grid;
+      gap: 18px;
+    }
+
     .hero-tags {
-      margin-top: 22px;
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
@@ -162,7 +225,7 @@
 
     .tag {
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       padding: 10px 12px;
@@ -178,7 +241,6 @@
       border-color: var(--border2);
     }
 
-    /* Clickable HealHubCenter styling */
     .brand-link {
       color: rgba(255, 255, 255, 0.92);
       text-decoration: none;
@@ -186,17 +248,76 @@
       transition: color 0.2s ease, border-color 0.2s ease;
       font-weight: 600;
     }
+
     .brand-link:hover {
       color: var(--blue);
       border-color: rgba(0, 119, 255, 0.6);
     }
 
-    /* Glass panel */
+    .book {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.35);
+      color: rgba(255, 255, 255, 0.8);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+    }
+
+    .book strong {
+      color: rgba(255, 255, 255, 0.92);
+      font-weight: 700;
+    }
+
+    .book .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--blue);
+      box-shadow: 0 0 18px rgba(0, 119, 255, 0.6);
+      flex-shrink: 0;
+    }
+
+    .mini-stats {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .mini-stat {
+      min-width: 140px;
+      border: 1px solid var(--border);
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(0, 0, 0, 0.35);
+      display: grid;
+      gap: 6px;
+    }
+
+    .mini-stat .num {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .mini-stat .label {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      color: var(--text-faint);
+    }
+
     .panel {
       background: rgba(0, 0, 0, 0.45);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 42px 10%;
+      border-radius: 18px;
+      padding: 34px;
       box-shadow: 0 18px 60px rgba(0, 0, 0, 0.6);
       position: relative;
       overflow: hidden;
@@ -206,7 +327,7 @@
       content: "";
       position: absolute;
       inset: -40%;
-      background: linear-gradient(110deg, transparent 40%, rgba(255,255,255,0.06) 50%, transparent 60%);
+      background: linear-gradient(110deg, transparent 40%, rgba(255, 255, 255, 0.06) 50%, transparent 60%);
       transform: translateX(-60%) rotate(2deg);
       opacity: 0;
       pointer-events: none;
@@ -214,41 +335,58 @@
     }
 
     @keyframes shimmerSweep {
-      0% { transform: translateX(-60%) rotate(2deg); opacity: 0; }
-      12% { opacity: 0.18; }
-      20% { opacity: 0.06; }
-      45% { transform: translateX(60%) rotate(2deg); opacity: 0; }
-      100% { transform: translateX(60%) rotate(2deg); opacity: 0; }
+      0% {
+        transform: translateX(-60%) rotate(2deg);
+        opacity: 0;
+      }
+
+      12% {
+        opacity: 0.18;
+      }
+
+      20% {
+        opacity: 0.06;
+      }
+
+      45% {
+        transform: translateX(60%) rotate(2deg);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateX(60%) rotate(2deg);
+        opacity: 0;
+      }
     }
 
     .section-title {
-      font-size: 2.1rem;
+      font-size: clamp(1.7rem, 2.6vw, 2.5rem);
       font-weight: 600;
-      margin-bottom: 10px;
+      margin: 0 0 12px;
       letter-spacing: 0.02em;
     }
 
     .section-sub {
-      font-size: 1.15rem;
+      font-size: 1.08rem;
       color: var(--text-dim);
       line-height: 1.75;
       max-width: 980px;
+      margin: 0;
     }
 
-    /* Card grid */
     .grid {
       margin-top: 22px;
       display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 14px;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 16px;
     }
 
     .card {
       grid-column: span 6;
       background: rgba(0, 0, 0, 0.35);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 18px 18px 16px;
+      border-radius: 16px;
+      padding: 20px 20px 18px;
       transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
       position: relative;
       overflow: hidden;
@@ -272,59 +410,88 @@
     .card h3 {
       font-size: 1.35rem;
       font-weight: 600;
-      margin-bottom: 8px;
+      margin: 0 0 8px;
     }
 
     .card p {
       color: var(--text-dim);
       line-height: 1.65;
-      font-size: 1.05rem;
+      font-size: 1.03rem;
+      margin: 0;
     }
 
     .card ul {
-      margin-top: 10px;
+      margin: 12px 0 0;
       padding-left: 18px;
       color: var(--text-dim);
       line-height: 1.7;
     }
 
-    .card li { margin-bottom: 6px; }
+    .card li {
+      margin-bottom: 6px;
+    }
 
-    /* Book callout */
-    .book {
-      margin-top: 18px;
-      display: inline-flex;
-      align-items: center;
+    .neuro-copy {
+      display: grid;
+      gap: 18px;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .neuro-points {
+      display: grid;
       gap: 10px;
-      padding: 12px 14px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: rgba(0,0,0,0.35);
-      color: rgba(255,255,255,0.8);
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      font-size: 0.85rem;
-      letter-spacing: 0.06em;
     }
 
-    .book strong { color: rgba(255,255,255,0.92); font-weight: 700; }
-    .book .dot {
-      width: 6px; height: 6px; border-radius: 999px; background: var(--blue);
-      box-shadow: 0 0 18px rgba(0,119,255,0.6);
+    .point {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
     }
 
-    /* Footer */
+    .point .dot {
+      width: 6px;
+      height: 6px;
+      margin-top: 8px;
+      border-radius: 50%;
+      background: var(--blue);
+      flex-shrink: 0;
+    }
+
+    .point p {
+      margin: 0;
+      color: var(--text-dim);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .note {
+      font-size: 0.8rem;
+      color: var(--text-faint);
+    }
+
+
     footer {
       margin-top: 60px;
-      padding: 28px 40px;
+      padding: 28px 20px 36px;
       background: rgba(0, 0, 0, 0.75);
       backdrop-filter: blur(10px);
       border-top: 1px solid var(--border);
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-inner {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 14px;
-      position: relative;
-      z-index: 2;
     }
 
     footer .footer-text {
@@ -335,16 +502,27 @@
       line-height: 1.6;
     }
 
-    footer .footer-text a { color: var(--blue); }
-    footer .footer-text a:hover { color: rgba(255,255,255,0.9); }
+    footer .footer-text a {
+      color: var(--blue);
+    }
 
-    .social-icons { display: flex; justify-content: center; gap: 18px; }
+    footer .footer-text a:hover {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
 
     .social-icons a img {
       width: 34px;
       height: 34px;
       opacity: 0.92;
       transition: transform 0.2s ease, opacity 0.2s ease;
+      display: block;
     }
 
     .social-icons a:hover img {
@@ -353,229 +531,319 @@
     }
 
     @media (max-width: 900px) {
-      .card { grid-column: span 12; }
-      section { padding: 46px 7%; }
-      header { padding: 14px 18px; }
-      header img { height: 4.3rem; }
-      .panel { padding: 34px 7%; }
-      .hero { min-height: 74vh; }
+
+      .container,
+      .header-inner,
+      .footer-inner {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .header-inner {
+        min-height: 76px;
+      }
+
+      header img {
+        height: 4rem;
+      }
+
+      .hero {
+        padding-top: 132px;
+        padding-bottom: 18px;
+        min-height: auto;
+      }
+
+      .intro-text {
+        font-size: clamp(1.8rem, 8vw, 2.8rem);
+        line-height: 1.06;
+      }
+
+      .hero-sub {
+        font-size: 1.03rem;
+        line-height: 1.7;
+      }
+
+      .panel {
+        padding: 24px 18px;
+      }
+
+      .card {
+        grid-column: span 12;
+      }
+
+      .mini-stats {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .mini-stat {
+        min-width: 0;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .header-inner {
+        gap: 14px;
+      }
+
+      .navbar-right ul {
+        gap: 16px;
+      }
+
+      .navbar-right a {
+        font-size: 0.95rem;
+      }
+
+      header img {
+        height: 3.3rem;
+      }
+
+      .hero-tags {
+        gap: 8px;
+      }
+
+      .tag {
+        font-size: 0.68rem;
+        padding: 9px 10px;
+        letter-spacing: 0.08em;
+      }
+
+      .book {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        font-size: 0.78rem;
+      }
+
+      .section-title {
+        line-height: 1.15;
+      }
+
+      .section-sub,
+      .card p,
+      .card ul {
+        font-size: 0.98rem;
+      }
+
+      footer .footer-text {
+        font-size: 0.94rem;
+      }
     }
   </style>
 </head>
 
 <body class="bg-black text-white">
-  <header class="flex justify-between items-center transition-all">
-    <div class="navbar-left">
-      <img src="img/Black And White Minimalist Typography Personal Logo (1).png" alt="Logo" class="navbar-img" />
-    </div>
-    <div class="navbar-right">
-      <nav>
-        <ul class="flex space-x-6">
-          <li><a href="about.html">About</a></li>
-           <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+  <header>
+    <div class="header-inner">
+      <div class="navbar-left">
+        <img src="img/Black And White Minimalist Typography Personal Logo (1).png" alt="Logo" class="navbar-img" />
+      </div>
+
+      <div class="navbar-right">
+        <nav>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
 
-  <!-- HERO -->
   <section class="hero fx" data-fx="hero">
-    <h1 class="intro-text">
-      Hi, I’m <span class="accent">Funbi</span> Akintade —<br />
-      Founder building neuroscience-informed<br />
-      mental health AI, with elite product taste.
-    </h1>
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-stack">
+          <h1 class="intro-text">
+            Hi, I’m <span class="accent">Funbi</span> Akintade —<br />
+            I build <span class="accent">AI-powered mental health systems</span><br />
+            and high-trust digital products.
+          </h1>
 
-    <p class="hero-sub">
-      I lead
-      <a class="brand-link healhub-link" href="https://www.healhubcenter.com" rel="noopener">HealHubCenter</a>:
-      a behavioral science and cognitive intelligence platform combining therapy, personalized AI support, and real-time pattern insight.
-      I also design and engineer the interfaces behind high trust products—UI/UX, front-end, and product strategy.
-    </p>
+          <p class="hero-sub">
+            Founder of
+            <a class="brand-link healhub-link" href="https://www.healhubcenter.com" rel="noopener">HealHubCenter</a>.
+            I work across product design, front-end engineering, and behavioral intelligence
+            building systems that move from concept to production and actually get used.
+          </p>
 
-    <!-- Published Book -->
-    <div class="book">
-      <span class="dot"></span>
-      Writer • Published Author — <strong>Before 21</strong>
-    </div>
+          <div class="book">
+            <span class="dot"></span>
+            Writer • Published Author — <strong>Before 21</strong>
+          </div>
 
-    <div class="hero-tags">
-      <span class="tag">Founder • HealHubCenter</span>
-      <span class="tag">Behavioral Science</span>
-      <span class="tag">Neuroscience-informed AI</span>
-      <span class="tag">UI/UX • Product Design</span>
-      <span class="tag">Front-End Engineering</span>
-      <span class="tag">Systems & Workflows</span>
+          <div class="hero-tags">
+            <span class="tag">Founder • HealHubCenter</span>
+            <span class="tag">Behavioral Science</span>
+            <span class="tag">Neuroscience-informed AI</span>
+            <span class="tag">UI/UX • Product Design</span>
+            <span class="tag">Front-End Engineering</span>
+            <span class="tag">Systems & Workflows</span>
+          </div>
+
+          <div class="mini-stats">
+            <div class="mini-stat">
+              <span class="num">3+</span>
+              <span class="label">Platforms shipped</span>
+            </div>
+            <div class="mini-stat">
+              <span class="num">Live</span>
+              <span class="label">Products in use</span>
+            </div>
+            <div class="mini-stat">
+              <span class="num">0→1</span>
+              <span class="label">Built from scratch</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
-<p class="subhead mt-5">
-  Founder and CEO of
-  <a class="brand-link healhub-link" href="https://www.healhubcenter.com"  rel="noopener">HealHubCenter</a>,
-  I design and engineer neuroscience-informed mental health AI that adapts in real time, with the polish of enterprise product.
-</p>
 
-<div class="mt-8 card">
-  <div class="kicker mb-2">Computational Neuroscience, Applied</div>
-  <h3>How HealHubCenter adapts in real time</h3>
-  <p>
-    HealHubCenter is built on applied computational neuroscience and behavioral science research. Instead of treating support
-    like a one-off chat, the system learns patterns over time and responds with context. It observes interaction signals like
-    language tone, pacing, frequency, and routine shifts to infer a user’s moment-to-moment state and deliver more appropriate support.
-  </p>
-  <p class="mt-3">
-    Under the hood, it uses signal-inspired modeling approaches drawn from years of research across affective neuroscience,
-    cognitive behavioral frameworks, and learning systems. The result is personalized assistance that feels intentional, not generic,
-    while respecting privacy and safety boundaries.
-  </p>
-  <p class="mt-3" style="color: rgba(255,255,255,0.62); font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; font-size: 0.9rem;">
-    Note: HealHubCenter is a support platform and does not provide medical diagnosis. When risk is detected, the system routes users to appropriate resources and professional care pathways.
-  </p>
-</div>
+  <section class="section-block">
+  <div class="container">
+    <div class="card fx">
 
-  <!-- ABOUT -->
-  <section id="about" class="panel fx fx-left">
-    <div class="text-container">
-      <h2 class="section-title">What I’m Building</h2>
-      <p class="section-sub">
-        <a class="brand-link healhub-link" href="https://www.healhubcenter.com" rel="noopener">HealHubCenter</a>
-        is mental health infrastructure engineered for scale—built on cognitive behavioral frameworks, behavioral analytics,
-        and research-driven personalization.
-        <br /><br />
-        We support individuals through therapy access and intelligent assistance, and we also deliver enterprise solutions:
-        custom AI bots, appointment booking, workflow systems, and integration support for healthcare organizations.
+      <div class="kicker mb-2">Computational Neuroscience, Applied</div>
+
+      <h3 class="text-xl font-semibold mb-3">
+        Real-time behavioral intelligence, not static responses
+      </h3>
+
+      <!-- LEAD -->
+      <p class="lead max-w-[720px]">
+        HealHubCenter adapts to user behavior in real time—interpreting interaction signals
+        and responding with context-aware support instead of generic outputs.
       </p>
+
+      <!-- GRID SYSTEM (MORE VISUAL, LESS BORING) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5 max-w-[900px]">
+
+        <div class="flex gap-3 items-start p-4 rounded-xl border border-[rgba(255,255,255,0.12)] bg-[rgba(0,0,0,0.35)] hover:translate-y-[-4px] transition">
+          <div class="w-2 h-2 mt-2 rounded-full bg-[rgba(0,119,255,0.9)] shadow-[0_0_12px_rgba(0,119,255,0.6)]"></div>
+          <p class="text-[rgba(255,255,255,0.7)] text-[0.95rem] leading-relaxed">
+            Interprets tone, pacing, and usage patterns as behavioral signals
+          </p>
+        </div>
+
+        <div class="flex gap-3 items-start p-4 rounded-xl border border-[rgba(255,255,255,0.12)] bg-[rgba(0,0,0,0.35)] hover:translate-y-[-4px] transition">
+          <div class="w-2 h-2 mt-2 rounded-full bg-[rgba(0,119,255,0.9)] shadow-[0_0_12px_rgba(0,119,255,0.6)]"></div>
+          <p class="text-[rgba(255,255,255,0.7)] text-[0.95rem] leading-relaxed">
+            Learns patterns over time to improve accuracy and personalization
+          </p>
+        </div>
+
+        <div class="flex gap-3 items-start p-4 rounded-xl border border-[rgba(255,255,255,0.12)] bg-[rgba(0,0,0,0.35)] hover:translate-y-[-4px] transition">
+          <div class="w-2 h-2 mt-2 rounded-full bg-[rgba(0,119,255,0.9)] shadow-[0_0_12px_rgba(0,119,255,0.6)]"></div>
+          <p class="text-[rgba(255,255,255,0.7)] text-[0.95rem] leading-relaxed">
+            Responds with context-aware support instead of static replies
+          </p>
+        </div>
+
+        <div class="flex gap-3 items-start p-4 rounded-xl border border-[rgba(255,255,255,0.12)] bg-[rgba(0,0,0,0.35)] hover:translate-y-[-4px] transition">
+          <div class="w-2 h-2 mt-2 rounded-full bg-[rgba(0,119,255,0.9)] shadow-[0_0_12px_rgba(0,119,255,0.6)]"></div>
+          <p class="text-[rgba(255,255,255,0.7)] text-[0.95rem] leading-relaxed">
+            Built on applied neuroscience and behavioral intelligence frameworks
+          </p>
+        </div>
+
+      </div>
+
+      <!-- NOTE -->
+      <p class="note mt-5 max-w-[720px]">
+        Support platform only not a medical diagnosis tool. High-risk cases are routed to professional care.
+      </p>
+
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- SELECTED WORK (as premium animated cards) -->
-  <section id="projects" class="panel fx fx-right">
-    <h2 class="section-title">Selected Work</h2>
-    <p class="section-sub">
-      Curated highlights. Next we’ll plug in your full list (US-based work, enterprise builds, client sites, and your major milestones)
-      and format it as a case-study grid.
-    </p>
-
-    <div class="grid">
-      <div class="card fx" data-delay="0">
-        <div class="kicker">Product • Platform</div>
-        <h3>
-          <a class="brand-link healhub-link" href="https://www.healhubcenter.com"  rel="noopener">HealHubCenter</a> Ecosystem
-        </h3>
-        <p>
-          Product design + front-end build of a mental health AI platform focused on personalization, trust, and scalability.
-        </p>
-        <ul>
-          <li>Therapy + AI support experience design</li>
-          <li>Behavior-aware flows and retention loops</li>
-          <li>Premium UI systems that feel enterprise</li>
-        </ul>
-      </div>
-
-      <div class="card fx" data-delay="60">
-        <div class="kicker">Enterprise • Automation</div>
-        <h3>Custom AI Bots & Workflows</h3>
-        <p>
-          Built full websites and implemented systems for AI agents/bot services covering workflows, onboarding, and conversion.
-        </p>
-        <ul>
-          <li>Booking + workflow automation concepts</li>
-          <li>Landing-to-product journey design</li>
-          <li>Integration-ready UI patterns</li>
-        </ul>
-      </div>
-
-      <div class="card fx" data-delay="120">
-        <div class="kicker">Design • Systems</div>
-        <h3>Design Systems & UI Libraries</h3>
-        <p>
-          Created scalable design foundations across products: typography, components, spacing, and interaction rules.
-        </p>
-        <ul>
-          <li>Reusable component patterns</li>
-          <li>Accessibility + high-trust design</li>
-          <li>Consistency across pages & features</li>
-        </ul>
-      </div>
-
-      <div class="card fx" data-delay="180">
-        <div class="kicker">Visual • Creative</div>
-        <h3>Senior-Level Visual & Brand Support</h3>
-        <p>
-          Strong graphic design execution for product visuals, marketing assets, and identity alignment—without looking “template-ish.”
-        </p>
-        <ul>
-          <li>Marketing & product graphics</li>
-          <li>Brand polish & direction</li>
-          <li>Visual hierarchy that converts</li>
-        </ul>
+  <section id="about" class="section-block fx fx-left">
+    <div class="container">
+      <div class="panel">
+        <div class="text-container">
+          <h2 class="section-title">What I am Building</h2>
+          <p class="section-sub">
+            <a class="brand-link healhub-link" href="https://www.healhubcenter.com" rel="noopener">HealHubCenter</a>
+            is mental health infrastructure engineered for scale built on cognitive behavioral frameworks, behavioral
+            analytics, and research-driven personalization.
+            <br /><br />
+            We support individuals through therapy access and intelligent assistance, and we also deliver enterprise
+            solutions: custom AI bots, appointment booking, workflow systems, and integration support for healthcare
+            organizations.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CAPABILITIES (cards) -->
-  <section id="skills" class="panel fx fx-left">
-    <h2 class="section-title">Capability Stack</h2>
-    <p class="section-sub">
-      No beginner percentage bars. This is the real stack: product + engineering + systems + research awareness.
-    </p>
+  <section id="skills" class="section-block fx fx-left">
+    <div class="container">
+      <div class="panel">
+        <h2 class="section-title">Capability Stack</h2>
+        <p class="section-sub">
+          No beginner percentage bars. This is the real stack: product + engineering + systems + research awareness.
+        </p>
 
-    <div class="grid">
-      <div class="card fx" data-delay="0">
-        <div class="kicker">Product</div>
-        <h3>UI/UX • Product Design</h3>
-        <p>Wireframing, prototyping, design systems, and user journeys that feel clean, premium, and intentional.</p>
-      </div>
+        <div class="grid">
+          <div class="card fx" data-delay="0">
+            <div class="kicker">Product</div>
+            <h3>UI/UX • Product Design</h3>
+            <p>Wireframing, prototyping, design systems, and user journeys that feel clean, premium, and intentional.
+            </p>
+          </div>
 
-      <div class="card fx" data-delay="60">
-        <div class="kicker">Engineering</div>
-        <h3>Front-End Engineering</h3>
-        <p>Responsive builds, interface architecture, performance-minded UI, and clean shipping habits.</p>
-      </div>
+          <div class="card fx" data-delay="60">
+            <div class="kicker">Engineering</div>
+            <h3>Front-End Engineering</h3>
+            <p>Responsive builds, interface architecture, performance-minded UI, and clean shipping habits.</p>
+          </div>
 
-      <div class="card fx" data-delay="120">
-        <div class="kicker">Systems</div>
-        <h3>Workflows • Integrations</h3>
-        <p>App integration tools, booking flows, enterprise automation patterns, and workflow thinking.</p>
-      </div>
+          <div class="card fx" data-delay="120">
+            <div class="kicker">Systems</div>
+            <h3>Workflows • Integrations</h3>
+            <p>App integration tools, booking flows, enterprise automation patterns, and workflow thinking.</p>
+          </div>
 
-      <div class="card fx" data-delay="180">
-        <div class="kicker">Research-Aware</div>
-        <h3>Behavioral Intelligence</h3>
-        <p>Neuroscience-informed product thinking—context, patterns, and feedback loops that respect users.</p>
+          <div class="card fx" data-delay="180">
+            <div class="kicker">Research-Aware</div>
+            <h3>Behavioral Intelligence</h3>
+            <p>Neuroscience-informed product thinking—context, patterns, and feedback loops that respect users.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <footer class="mt-10 text-center py-2">
-    <div class="footer-text mb-2">
-      <p>&copy; 2025 Funbi Akintade. All rights reserved.</p>
-      <p>
-        Phone: +234-702-5511-392 |
-        Email: <a href="mailto:Ayipexfunby@gmail.com">Ayipexfunby@gmail.com</a>
-      </p>
-    </div>
+    <div class="footer-inner">
+      <div class="footer-text mb-2">
+        <p>&copy; 2025 Funbi Akintade. All rights reserved.</p>
+        <p>
+          Phone: +234-702-5511-392 |
+          Email: <a href="mailto:Ayipexfunby@gmail.com">Ayipexfunby@gmail.com</a>
+        </p>
+      </div>
 
-    <div class="social-icons">
-      <a href="https://www.linkedin.com/in/funbi-akintade-59a4ba237"  rel="noopener">
-        <img src="https://img.icons8.com/ios-filled/40/ffffff/linkedin.png" alt="LinkedIn" />
-      </a>
-      <a href="https://www.instagram.com/oluwafunbilayorr" rel="noopener">
-        <img src="https://img.icons8.com/ios-filled/40/ffffff/instagram-new.png" alt="Instagram" />
-      </a>
-      <a href="mailto:Ayipexfunby@gmail.com">
-        <img src="https://img.icons8.com/ios-filled/40/ffffff/email.png" alt="Email" />
-      </a>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/funbi-akintade-59a4ba237" rel="noopener">
+          <img src="https://img.icons8.com/ios-filled/40/ffffff/linkedin.png" alt="LinkedIn" />
+        </a>
+        <a href="https://www.instagram.com/oluwafunbilayorr" rel="noopener">
+          <img src="https://img.icons8.com/ios-filled/40/ffffff/instagram-new.png" alt="Instagram" />
+        </a>
+        <a href="mailto:Ayipexfunby@gmail.com">
+          <img src="https://img.icons8.com/ios-filled/40/ffffff/email.png" alt="Email" />
+        </a>
+      </div>
     </div>
   </footer>
 
   <script>
-    // Make every HealHubCenter mention go to your URL (so yes, you can click it “20 times” everywhere it appears)
     const HEALHUB_URL = "https://www.healhubcenter.com";
     document.querySelectorAll(".healhub-link").forEach(a => {
       a.href = HEALHUB_URL;
     });
 
-    // Animation observer that re-triggers when you scroll away and come back
     const fxEls = document.querySelectorAll(".fx");
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -583,7 +851,6 @@
         if (entry.isIntersecting) {
           setTimeout(() => entry.target.classList.add("in"), delay);
         } else {
-          // ✅ re-trigger when you scroll back
           entry.target.classList.remove("in");
         }
       });
@@ -591,7 +858,6 @@
 
     fxEls.forEach(el => observer.observe(el));
 
-    // "Surprise" load effect: animate hero immediately on load.
     window.addEventListener("load", () => {
       const hero = document.querySelector('[data-fx="hero"]');
       if (hero) hero.classList.add("in");
